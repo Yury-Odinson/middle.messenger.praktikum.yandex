@@ -1,1 +1,14 @@
-<h1>login</h1>
+<form class="form form__login">
+    <div class="form-data">
+            <p>Вход</p>
+        {{> Input label="Логин" type="text" appointment="input__form"}}
+        {{> Input label="Пароль" type="password" appointment="input__form"}}
+    </div>
+
+    <div class="form-control">
+        {{> Button type="primary" label="Авторизоваться" }}
+        {{> Button type="secondary" label="Нет аккаунта?" }}
+    </div>
+
+
+</form>

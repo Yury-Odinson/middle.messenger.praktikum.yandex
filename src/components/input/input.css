@@ -1,0 +1,38 @@
+input {
+    padding: 0.6em 1.2em;
+    background-color: var(--transparent-color);
+    border: none;
+    border-bottom: 1px solid var(--main-color);
+    font-size: 1.3em;
+    font-weight: 500;
+    transition: border-color 0.25s;
+}
+
+input:hover {
+    border-color: var(--main-color);
+}
+
+input:focus,
+input:focus-visible {
+    border-radius: 8px;
+    outline: none;
+    background-color: var(--secondary-color);
+}
+
+.input {
+    position: relative;
+}
+
+.input__label {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translate(30%, -50%);
+    transition: 0.25s;
+}
+
+.input__form:valid + .input__label {
+    top: 0;
+    left: 0;
+    font-size: 0.7em;
+}

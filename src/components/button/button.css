@@ -9,10 +9,22 @@ button {
     cursor: pointer;
     transition: border-color 0.25s;
 }
+
 button:hover {
-    border-color: #646cff;
+    border-color: var(--main-color);
 }
+
 button:focus,
 button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
+    outline: 4px auto var(--main-color);
+}
+
+.button__primary {
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+.button__secondary {
+    background-color: #FFFFFF00;
+    color: var(--main-color);
 }
