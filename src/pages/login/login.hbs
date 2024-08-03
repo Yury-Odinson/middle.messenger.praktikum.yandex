@@ -1,14 +1,13 @@
 <form class="form form__login">
     <div class="form-data">
-            <p>Вход</p>
+        <p class="form-data__title">Вход</p>
         {{> Input label="Логин" type="text" appointment="input__form" error="Неверный логин"}}
         {{> Input label="Пароль" type="password" appointment="input__form"}}
+        {{> Button label="Забыли пароль?" type="forgot-password" }}
     </div>
 
     <div class="form-control">
         {{> Button type="primary" label="Авторизоваться" }}
         {{> Button type="secondary" label="Нет аккаунта?" }}
     </div>
-
-
 </form>
