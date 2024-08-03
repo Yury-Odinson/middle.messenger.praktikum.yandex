@@ -27,12 +27,21 @@ input:focus-visible {
     position: absolute;
     top: 50%;
     left: 5%;
-    transform: translate(30%, -50%);
+    transform: translateY(-50%);
+    transition: 0.25s;
+}
+
+.input__label-error {
+    position: absolute;
+    bottom: -30%;
+    left: 5%;
+    color: var(--error-color);
+    font-size: 0.7em;
     transition: 0.25s;
 }
 
 .input__form:valid + .input__label {
     top: 0;
-    left: 0;
+    left: 5%;
     font-size: 0.7em;
 }
