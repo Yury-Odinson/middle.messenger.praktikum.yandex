@@ -1,1 +1,32 @@
-<h1>chatSelect</h1>
+<div class="wrapper">
+    <div class="chat__nav">
+
+        <div class="chat__nav-header">
+            {{>Button appointment="nav-profile" label="Профиль"}}
+            {{>Input appointment="input__nav-search" type="text" label="Поиск"}}
+        </div>
+
+        <div class="chat__items">
+            {{>ChatItem
+                imgLink="/src/assets/img/_mockData/user1.jpg"
+                nameUser="Андрей"
+                messageUser="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
+                dateMessage="10:49"
+                unreadValue="2"
+            }}
+
+            {{>ChatItem
+                    imgLink="/src/assets/img/_mockData/user3.jpg"
+                    nameUser="Сергей"
+                    sender="Вы: "
+                    messageUser="consectetur adipiscing elit, sed do eiusmod tempor incididnt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
+                    dateMessage="10:49"
+                    unreadValue="42"
+            }}
+        </div>
+    </div>
+
+    <div class="chat__field">
+        <p class="chat__field-title">Выберите чат чтобы отправить сообщение</p>
+    </div>
+</div>
