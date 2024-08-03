@@ -1,1 +1,18 @@
-<h1>signIn</h1>
+<form class="form">
+    <div class="form-data">
+        <p class="form-data__title">Регистрация</p>
+        {{> Input label="Почта" type="text" appointment="input__form"}}
+        {{> Input label="Логин" type="text" appointment="input__form"}}
+        {{> Input label="Имя" type="text" appointment="input__form"}}
+
+        {{> Input label="Фамилия" type="text" appointment="input__form"}}
+        {{> Input label="Телефон" type="text" appointment="input__form"}}
+        {{> Input label="Пароль" type="password" appointment="input__form input__form-errPwd"}}
+        {{> Input label="Пароль (ещё раз)" type="password" appointment="input__form input__form-errPwd" error="Пароли не совпадают!" }}
+    </div>
+
+    <div class="form-control">
+        {{> Button type="primary" label="Зарегистрироваться" }}
+        {{> Button type="secondary" label="Войти" }}
+    </div>
+</form>

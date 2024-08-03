@@ -45,3 +45,7 @@ input:focus-visible {
     left: 5%;
     font-size: 0.7em;
 }
+
+.input__form-errPwd {
+    color: var(--error-color);
+}
