@@ -2,17 +2,13 @@
     <img class="chat__item-avatar" src={{imgLink}} width="50" height="50" alt="">
     <div class="chat__item-data">
         <p class="chat__item-name">{{nameUser}}</p>
-        <!--        <p class="chat__item-sender">{{sender}}</p>-->
-        <p class="chat__item-message">{{sender}}{{messageUser}}</p>
+        <div class="chat__item-message">
+            <span>{{sender}}</span>
+            <span>{{messageUser}}</span>
+        </div>
     </div>
     <div class="chat__item-info">
         <p class="chat__item-message-date">{{dateMessage}}</p>
-        <div class="chat__item-unread-value">
-            <p class="unread-counter">
-                {{unreadValue}}
-            </p>
-        </div>
+        <p class="chat__item-unread-value">{{unreadValue}}</p>
     </div>
 </div>
-
-
