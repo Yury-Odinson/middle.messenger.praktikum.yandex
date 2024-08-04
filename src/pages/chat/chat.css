@@ -40,9 +40,17 @@
 
 
 .chat__main {
+    padding: 1rem 2rem;
     width: 100%;
     height: 100%;
 }
+
+.chat__date-message {
+    padding: 1rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary-color);
+}
+
 
 
 .chat__footer {
