@@ -45,10 +45,6 @@
     font-size: 0.7em;
 }
 
-.chat__items {
-    /*height: 10vh;*/
-}
-
 .chat__field {
     padding: 2rem;
     display: flex;
