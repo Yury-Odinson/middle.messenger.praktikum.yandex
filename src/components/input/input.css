@@ -21,6 +21,7 @@ input:focus-visible {
 
 .input {
     position: relative;
+    width: 100%;
 }
 
 .input__label {
@@ -28,6 +29,7 @@ input:focus-visible {
     top: 50%;
     left: 5%;
     transform: translateY(-50%);
+    color: var(--text-secondary-color);
     transition: 0.25s;
 }
 
