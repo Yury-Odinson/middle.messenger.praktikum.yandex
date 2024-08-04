@@ -1,1 +1,45 @@
-<h1>chat</h1>
+<div class="wrapper">
+    <div class="chat__nav">
+
+        <div class="chat__nav-header">
+            {{>Button appointment="nav-profile" label="Профиль"}}
+            {{>Input appointment="input__nav-search" type="text" label="Поиск"}}
+        </div>
+
+        {{>ChatsList}}
+
+    </div>
+
+    <div class="chat__field">
+
+
+        <div class="chat__header">
+            <div class="chat__user-info">
+                <img class="chat__item-avatar" src="/src/assets/img/_mockData/user4.jpg" width="50" height="50" alt="">
+                <p class="chat__item-name">Мистер Кот</p>
+            </div>
+
+
+            <div class="chat__settings">
+                {{>Button appointment="chat-settings"}}
+            </div>
+
+
+        </div>
+
+
+
+
+        <div class="chat__main">
+            <p>main</p>
+        </div>
+
+
+
+
+
+        <div class="chat__footer">
+            <p>footer</p>
+        </div>
+    </div>
+</div>
