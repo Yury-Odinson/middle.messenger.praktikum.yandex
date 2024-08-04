@@ -1,0 +1,63 @@
+.chat__header,
+.chat__footer {
+    position: relative;
+}
+
+.chat__settings-menu,
+.chat__attach-menu {
+    position: absolute;
+    padding: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    border-radius: 12px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+    background-color: #fff;
+}
+
+.chat__settings-menu {
+    right: 2rem;
+    top: 5rem;
+}
+
+.button__add-user,
+.button__remove-user,
+.button__attach-photo,
+.button__attach-file,
+.button__attach-location {
+    padding-left: 3rem;
+    background-repeat: no-repeat;
+    background-position: 5%;
+    background-color: var(--transparent-color);
+    text-align: left;
+}
+
+.button__add-user {
+    background-image: url("/src/assets/img/add-user-btn.png");
+}
+
+.button__remove-user {
+    background-image: url("/src/assets/img/remove-user-btn.png");
+}
+
+.chat__attach-menu {
+    position: absolute;
+    bottom: 5rem;
+    left: 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+}
+
+.button__attach-photo {
+    background-image: url("/src/assets/img/attach-photo-video.png");
+}
+
+.button__attach-file {
+    background-image: url("/src/assets/img/attach-file.png");
+}
+
+.button__attach-location {
+    background-image: url("/src/assets/img/attach-location.png");
+}

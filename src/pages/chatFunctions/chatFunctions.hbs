@@ -1,1 +1,141 @@
-<h1>chatFunctions</h1>
+<div class="wrapper">
+    <div class="chat__nav">
+
+        <div class="chat__nav-header">
+            {{>Button appointment="nav-profile" label="Профиль"}}
+            {{>Input appointment="input__nav-search" type="text" label="Поиск"}}
+        </div>
+        {{>ChatsList}}
+    </div>
+
+    <div class="chat__field">
+
+        <div class="chat__header">
+            <div class="chat__user-info">
+                <img class="chat__item-avatar" src="/src/assets/img/_mockData/user4.jpg" width="50" height="50" alt="">
+                <p class="chat__item-name">Мистер Кот</p>
+            </div>
+            <div class="chat__settings">
+                {{>Button appointment="chat-settings"}}
+            </div>
+
+            <div class="chat__settings-menu">
+                {{>Button appointment="add-user" label="Добавить пользователя"}}
+                {{>Button appointment="remove-user" label="Удалить пользователя"}}
+            </div>
+        </div>
+
+        <div class="chat__main">
+
+            <p class="chat__date-message">2 августа 2016 г.</p>
+
+            <!--            ПОМЕТКА ДЛЯ РЕВЬЮЕРА!
+                            Здесь сообщения представляю как статично, так и с помощью компонентов.
+                            Поскольку на 1-м спринте делаем только вёрстку, сообщения от пользователя пишу статично, поскольку
+                            у сообщений от пользователя нету галочек о получении/прочтении. Сообщения от клиента делаю с
+                            использованием компонента. В дальнейшем все сообщения будут отрефакторены.
+            -->
+
+            <div class="chat__message message-user">
+                <div class="message-content">
+                    Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент
+                    попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что
+                    астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на
+                    поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.
+                    <br>
+                    Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда
+                    и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000
+                    евро.
+                </div>
+                <div class="message-attachments"></div>
+                <div class="message-info">
+                    <p class="message-date">13:49</p>
+                </div>
+            </div>
+
+            {{>Message
+                    appointment="message-you"
+                    content="Круто!"
+                    date="13:53"
+            }}
+
+            <div class="chat__message message-user">
+                <div class="message-content"></div>
+                <div class="message-attachments">
+                    <img src="/src/assets/img/_mockData/message-image.png" alt="">
+                </div>
+                <div class="message-info">
+                    <p class="message-date">14:37</p>
+                </div>
+            </div>
+
+            {{>Message
+                    appointment="message-you"
+                    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    date="15:23"
+            }}
+
+            {{>Message
+                    appointment="message-you"
+                    content="Lorem ipsum dolor."
+                    date="15:23"
+            }}
+
+            {{>Message
+                    appointment="message-you"
+                    content="Lorem ipsum dolor."
+                    date="15:23"
+            }}
+
+            {{>Message
+                    appointment="message-you"
+                    content="Lorem ipsum dolor."
+                    date="15:23"
+            }}
+
+            {{>Message
+                    appointment="message-you"
+                    content="Lorem ipsum dolor."
+                    date="15:23"
+            }}
+
+            {{>Message
+                    appointment="message-you"
+                    content="Lorem ipsum dolor."
+                    date="15:23"
+            }}
+
+            {{>Message
+                    appointment="message-you"
+                    content="Lorem ipsum dolor."
+                    date="15:23"
+            }}
+
+            {{>Message
+                    appointment="message-you"
+                    content="Lorem ipsum dolor."
+                    date="15:23"
+            }}
+
+            {{>Message
+                    appointment="message-you"
+                    content="Lorem ipsum dolor."
+                    date="15:23"
+            }}
+
+        </div>
+
+        <div class="chat__footer">
+            {{>Button appointment="attachment" label=""}}
+            {{>Input appointment="input__message" type="text" label="Сообщение"}}
+            {{>Button appointment="send-message" label=""}}
+
+            <div class="chat__attach-menu">
+                {{>Button appointment="attach-photo" label="Фото или Видео"}}
+                {{>Button appointment="attach-file" label="Файл"}}
+                {{>Button appointment="attach-location" label="Локация"}}
+            </div>
+
+        </div>
+    </div>
+</div>
