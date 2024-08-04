@@ -35,7 +35,7 @@ function navigate(page: string) {
     container.innerHTML = templatingFunction(context);
 }
 
-document.addEventListener("DOMContentLoaded", () => navigate("chat"));
+document.addEventListener("DOMContentLoaded", () => navigate("chatSearch"));
 
 document.addEventListener('click', e => {
     //@ts-ignore
