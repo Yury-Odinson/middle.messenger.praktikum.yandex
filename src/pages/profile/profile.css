@@ -9,8 +9,9 @@
     height: fit-content;
 }
 
-.profile__avatar-settings {
+.profile__main-data {
     position: relative;
+    margin-bottom: 3rem;
 }
 
 .profile__avatar {
@@ -35,6 +36,7 @@
     text-align: center;
     line-height: 1rem;
     color: #fff;
+    pointer-events: none;
 }
 
 .profile__avatar:hover + .profile__avatar-change {
@@ -42,7 +44,6 @@
 }
 
 .profile__name {
-    margin-bottom: 3rem;
     font-size: 1.2rem;
     font-weight: 700;
 }

@@ -1,0 +1,31 @@
+.button__primary-profile {
+    margin: 0 auto;
+    background-color: var(--main-color);
+    color: #fff;
+    width: 50%;
+}
+
+.profile__data > .input {
+    padding: 0;
+    background-color: var(--transparent-color);
+    font-size: 1em;
+    max-width: 300px;
+    font-weight: 500;
+    transition: border-color 0.25s;
+}
+
+.profile__data > .input > label > .input__label {
+    right: 0;
+    left: auto;
+}
+
+.input__profile-data {
+    text-align: right;
+    border: none;
+    padding: 0 0.3rem;
+    width: 100%;
+}
+
+.input__profile-data:valid + .input__label {
+    display: none;
+}
