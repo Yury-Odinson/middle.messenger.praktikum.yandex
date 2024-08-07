@@ -9,8 +9,36 @@
     height: fit-content;
 }
 
+.profile__avatar-settings {
+    position: relative;
+}
+
 .profile__avatar {
     margin: 0 auto;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.25s;
+}
+
+.profile__avatar:hover {
+    filter: brightness(40%);
+    transition: 0.25s;
+}
+
+.profile__avatar-change {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 130px;
+    text-align: center;
+    line-height: 1rem;
+    color: #fff;
+}
+
+.profile__avatar:hover + .profile__avatar-change {
+    display: block;
 }
 
 .profile__name {
