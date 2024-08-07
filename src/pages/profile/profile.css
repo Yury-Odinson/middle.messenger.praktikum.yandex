@@ -75,6 +75,7 @@
     background-color: var(--transparent-color);
     border-bottom: 2px solid var(--background-dark-color);
     color: var(--main-color);
+    text-align: left;
 }
 
 .button__profile-secondary {
