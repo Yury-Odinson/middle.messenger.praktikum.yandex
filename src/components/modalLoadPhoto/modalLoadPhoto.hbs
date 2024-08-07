@@ -1,0 +1,19 @@
+<div class="modal__background"></div>
+
+<div class="modal__load-photo">
+    <p class="modal__load-photo-title">{{labelTitle}}</p>
+
+    <label class="label__load-photo" for="input__photo">
+        <span>Выбрать файл на компьютере</span>
+    </label>
+    {{>Input
+            name="input__photo"
+            id="input__photo"
+            appointment="input__load-file"
+            type="file"
+    }}
+    {{>Button
+            appointment="primary"
+            label="Поменять"
+    }}
+</div>

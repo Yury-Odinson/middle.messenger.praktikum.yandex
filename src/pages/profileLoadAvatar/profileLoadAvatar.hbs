@@ -1,1 +1,50 @@
-<h1>profileLoadAvatar</h1>
+<div class="wrapper">
+
+    {{>ModalLoadPhoto
+            labelTitle="Загрузите файл"
+    }}
+
+    {{>Button appointment="profile-back"}}
+
+    <div class="profile__field">
+
+        <div class="profile__main-data">
+            <img class="profile__avatar" src="/src/assets/img/avatar-plug.png" width="130" height="130" alt="">
+            <p class="profile__avatar-change">Поменять аватар</p>
+            <p class="profile__name">Иван</p>
+        </div>
+
+        <div class="profile__data">
+            <p>Почта</p>
+            <p>pochta@yandex.ru</p>
+        </div>
+        <div class="profile__data">
+            <p>Логин</p>
+            <p>ivanivanov</p>
+        </div>
+        <div class="profile__data">
+            <p>Имя</p>
+            <p>Иван</p>
+        </div>
+        <div class="profile__data">
+            <p>Фамилия</p>
+            <p>Иванов</p>
+        </div>
+        <div class="profile__data">
+            <p>Имя в чате</p>
+            <p>Иваныч</p>
+        </div>
+        <div class="profile__data">
+            <p>Телефон</p>
+            <p>+7 (123) 456 78 90</p>
+        </div>
+
+        <div class="profile__control">
+            {{>Button appointment="profile-main" label="Изменить данные"}}
+            {{>Button appointment="profile-main" label="Изменить пароль"}}
+            {{>Button appointment="profile-secondary" label="Выйти"}}
+        </div>
+
+    </div>
+
+</div>

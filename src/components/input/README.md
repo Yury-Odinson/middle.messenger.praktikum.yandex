@@ -1,4 +1,6 @@
 Аргументы компонента Input: 
+* {{name}} - передаваемый атрибут name <br>
+* {{id}} - передаваемый id <br>
 * {{appointment}} - передаваемые классы <br>
 * {{type}} - тип инпута (text, password и т.д. https://www.w3schools.com/html/html_form_input_types.asp)
 * {{defaultValue}} - текст инпута по умолчанию <br>
@@ -7,4 +9,11 @@
 
 
 Пример использования: <br>
-```{{> Input label="Логин" type="text" appointment="input__form" error="Неверный логин"}}```
+```
+{{>Input
+    name="input__photo"
+    id="input__photo"
+    appointment="input__load-file"
+    type="file"
+}}
+```

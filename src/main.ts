@@ -35,7 +35,7 @@ function navigate(page: string) {
     container.innerHTML = templatingFunction(context);
 }
 
-document.addEventListener("DOMContentLoaded", () => navigate("profileChangePassword"));
+document.addEventListener("DOMContentLoaded", () => navigate("profileLoadAvatar"));
 
 document.addEventListener('click', e => {
     //@ts-ignore
