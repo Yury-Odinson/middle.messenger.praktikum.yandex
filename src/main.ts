@@ -12,8 +12,6 @@ const pages = {
     "chatSearch": [Pages.ChatSearchPage],
     "chatSelect": [Pages.ChatSelectPage],
     "dialogLoad": [Pages.DialogLoadPage],
-    "dialogLoadDone": [Pages.DialogLoadDonePage],
-    "dialogLoadError": [Pages.DialogLoadErrorPage],
     "error404": [Pages.Error404Page],
     "error500": [Pages.Error500Page],
     "login": [Pages.LoginPage],
@@ -35,7 +33,7 @@ function navigate(page: string) {
     container.innerHTML = templatingFunction(context);
 }
 
-document.addEventListener("DOMContentLoaded", () => navigate("profileLoadAvatar"));
+document.addEventListener("DOMContentLoaded", () => navigate("dialogLoad"));
 
 document.addEventListener('click', e => {
     //@ts-ignore

@@ -1,0 +1,10 @@
+.wrapper-dialog {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    width: 70vw;
+}
+
+.dialog {
+    position: relative;
+}

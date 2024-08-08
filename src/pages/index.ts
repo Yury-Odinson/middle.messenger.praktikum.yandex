@@ -5,8 +5,6 @@ export {ChatFunctionsPage} from "./chatFunctions";
 export {ChatSearchPage} from "./chatSearch";
 export {ChatSelectPage} from "./chatSelect";
 export {DialogLoadPage} from "./dialogLoad";
-export {DialogLoadDonePage} from "./dialogLoadDone";
-export {DialogLoadErrorPage} from "./dialogLoadError";
 export {Error404Page} from "./error404";
 export {Error500Page} from "./error500";
 export {LoginPage} from "./login";

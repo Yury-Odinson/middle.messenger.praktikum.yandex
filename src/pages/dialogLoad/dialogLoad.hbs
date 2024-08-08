@@ -1,1 +1,27 @@
-<h1>dialogLoad</h1>
+<div class="wrapper-dialog">
+
+    <div class="dialog">
+        <p>1</p>
+        {{>ModalLoadPhoto
+                appointment="modal__loaded-photo"
+                labelTitle="Файл загружен"
+                loadedFile="new-avatar.png"
+        }}
+    </div>
+
+    <div class="dialog">
+        <p>2</p>
+        {{>ModalLoadPhoto
+                labelTitle="Загрузите файл"
+                warning="Нужно выбрать файл"
+        }}
+    </div>
+
+    <div class="dialog">
+        <p>3</p>
+        {{>ModalLoadPhoto
+                labelError="Ошибка, попробуйте ещё раз"
+        }}
+    </div>
+
+</div>
