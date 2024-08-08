@@ -54,7 +54,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
 `,Mr=`<div class="chat__items">
 
     {{>ChatItem
-            imgLink="/public/user1.jpg"
+            imgLink="/user1.jpg"
             nameUser="Андрей"
             messageUser="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
             dateMessage="10:49"
@@ -62,7 +62,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
     }}
 
     {{>ChatItem
-            imgLink="/public/user2.jpg"
+            imgLink="/user2.jpg"
             nameUser="Сергей"
             sender="Вы: "
             messageUser="consectetur adipiscing elit, sed do eiusmod tempor incididnt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
@@ -71,7 +71,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
     }}
 
     {{>ChatItem
-            imgLink="/public/user3.jpg"
+            imgLink="/user3.jpg"
             nameUser="Алёша"
             sender="Вы: "
             messageUser="consectetur adipiscing elit, sed do eiusmod tempor incididnt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
@@ -80,7 +80,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
     }}
 
     {{>ChatItem
-            imgLink="/public/user4.jpg"
+            imgLink="/user4.jpg"
             nameUser="Киви"
             sender="Вы: "
             messageUser="consetation"
@@ -89,7 +89,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
     }}
 
     {{>ChatItem
-            imgLink="/public/user1.jpg"
+            imgLink="/user1.jpg"
             nameUser="Рентген Дмитрий Валерьевич"
             sender="Вы: "
             messageUser="consectetur adipiscing elit, sed do eiusmod tempor incididnt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
@@ -98,7 +98,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
     }}
 
     {{>ChatItem
-            imgLink="/public/user3.jpg"
+            imgLink="/user3.jpg"
             nameUser="Джеймс Хэтфилд"
             sender="Вы: "
             messageUser="consectetur adipiscing elit, sed do eiusmod tempor incididnt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
@@ -107,7 +107,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
     }}
 
     {{>ChatItem
-            imgLink="/public/user2.jpg"
+            imgLink="/user2.jpg"
             nameUser="Валенок"
             sender=""
             messageUser="consectetur adipiscing elit, sed do eiusmod tempor incididnt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
@@ -116,7 +116,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
     }}
 
     {{>ChatItem
-            imgLink="/public/user4.jpg"
+            imgLink="/user4.jpg"
             nameUser="Чат Вселенной"
             sender="Вы: "
             messageUser="consectetur adipiscing elit, sed do eiusmod tempor incididnt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
@@ -125,7 +125,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
     }}
 
     {{>ChatItem
-            imgLink="/public/user1.jpg"
+            imgLink="/user1.jpg"
             nameUser="Оби Ван Кеноби"
             sender=""
             messageUser="consectetur adipiscing elit, sed do eiusmod tempor incididnt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
@@ -134,7 +134,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
     }}
 
     {{>ChatItem
-            imgLink="/public/user2.jpg"
+            imgLink="/user2.jpg"
             nameUser="Мистер Твистер"
             sender="Вы: "
             messageUser="consectetur adipiscing elit, sed do eiusmod tempor incididnt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
@@ -143,7 +143,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
     }}
 
     {{>ChatItem
-            imgLink="/public/user3.jpg"
+            imgLink="/user3.jpg"
             nameUser="Мистер Кот"
             sender=""
             messageUser="МЯУ"
@@ -152,7 +152,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
     }}
 
     {{>ChatItem
-            imgLink="/public/user3.jpg"
+            imgLink="/user3.jpg"
             nameUser="Мистер Кот"
             sender=""
             messageUser="МЯУ"
@@ -161,7 +161,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
     }}
 
     {{>ChatItem
-            imgLink="/public/user3.jpg"
+            imgLink="/user3.jpg"
             nameUser="Мистер Кот"
             sender=""
             messageUser="МЯУ"
@@ -170,7 +170,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
     }}
 
     {{>ChatItem
-            imgLink="/public/user3.jpg"
+            imgLink="/user3.jpg"
             nameUser="Мистер Кот"
             sender=""
             messageUser="МЯУ"
@@ -179,7 +179,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
     }}
 
     {{>ChatItem
-            imgLink="/public/user3.jpg"
+            imgLink="/user3.jpg"
             nameUser="Мистер Кот"
             sender=""
             messageUser="МЯУ"
@@ -188,7 +188,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
     }}
 
     {{>ChatItem
-            imgLink="/public/user3.jpg"
+            imgLink="/user3.jpg"
             nameUser="Мистер Кот"
             sender=""
             messageUser="МЯУ"
@@ -197,7 +197,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
     }}
 
     {{>ChatItem
-            imgLink="/public/user3.jpg"
+            imgLink="/user3.jpg"
             nameUser="Мистер Кот"
             sender=""
             messageUser="МЯУ"
@@ -210,7 +210,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
     <div class="message-content">{{content}}</div>
     <div class="message-attachments">{{attachments}}</div>
     <div class="message-info">
-        <img class="message-status" src="/public/message-read-icon.png" alt="" width="10" height="5">
+        <img class="message-status" src="/message-read-icon.png" alt="" width="10" height="5">
         <p class="message-date">{{date}}</p>
     </div>
 </div>
@@ -287,7 +287,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
 
         <div class="chat__header">
             <div class="chat__user-info">
-                <img class="chat__item-avatar" src="/public/user4.jpg" width="50" height="50" alt="">
+                <img class="chat__item-avatar" src="/user4.jpg" width="50" height="50" alt="">
                 <p class="chat__item-name">Мистер Кот</p>
             </div>
             <div class="chat__settings">
@@ -332,7 +332,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
             <div class="chat__message message-user">
                 <div class="message-content"></div>
                 <div class="message-attachments">
-                    <img src="/public/message-image.png" alt="">
+                    <img src="/message-image.png" alt="">
                 </div>
                 <div class="message-info">
                     <p class="message-date">14:37</p>
@@ -433,7 +433,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
 
         <div class="chat__header">
             <div class="chat__user-info">
-                <img class="chat__item-avatar" src="/public/user4.jpg" width="50" height="50" alt="">
+                <img class="chat__item-avatar" src="/user4.jpg" width="50" height="50" alt="">
                 <p class="chat__item-name">Мистер Кот</p>
             </div>
             <div class="chat__settings">
@@ -478,7 +478,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
             <div class="chat__message message-user">
                 <div class="message-content"></div>
                 <div class="message-attachments">
-                    <img src="/public/message-image.png" alt="">
+                    <img src="/message-image.png" alt="">
                 </div>
                 <div class="message-info">
                     <p class="message-date">14:37</p>
@@ -562,7 +562,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
 
         <div class="chat__header">
             <div class="chat__user-info">
-                <img class="chat__item-avatar" src="/public/user4.jpg" width="50" height="50" alt="">
+                <img class="chat__item-avatar" src="/user4.jpg" width="50" height="50" alt="">
                 <p class="chat__item-name">Мистер Кот</p>
             </div>
             <div class="chat__settings">
@@ -612,7 +612,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
             <div class="chat__message message-user">
                 <div class="message-content"></div>
                 <div class="message-attachments">
-                    <img src="/public/message-image.png" alt="">
+                    <img src="/message-image.png" alt="">
                 </div>
                 <div class="message-info">
                     <p class="message-date">14:37</p>
@@ -703,7 +703,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
             -->
 
         {{>ChatItem
-                imgLink="/public/user1.jpg"
+                imgLink="/user1.jpg"
                 nameUser="Кинопоиск"
                 sender=""
                 messageUser="Lorem lorem bla bla bla"
@@ -712,7 +712,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
         }}
 
         {{>ChatItem
-                imgLink="/public/user4.jpg"
+                imgLink="/user4.jpg"
                 nameUser="Киноклуб"
                 sender=""
                 messageUser="Lorem lorem bla bla bla Losdd lorem qwerty ololo dda"
@@ -726,7 +726,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
 
         <div class="chat__header">
             <div class="chat__user-info">
-                <img class="chat__item-avatar" src="/public/user4.jpg" width="50" height="50" alt="">
+                <img class="chat__item-avatar" src="/user4.jpg" width="50" height="50" alt="">
                 <p class="chat__item-name">Мистер Кот</p>
             </div>
             <div class="chat__settings">
@@ -772,7 +772,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
             <div class="chat__message message-user">
                 <div class="message-content"></div>
                 <div class="message-attachments">
-                    <img src="/public/message-image.png" alt="">
+                    <img src="/message-image.png" alt="">
                 </div>
                 <div class="message-info">
                     <p class="message-date">14:37</p>
@@ -917,7 +917,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
     <div class="profile__field">
 
         <div class="profile__main-data">
-            <img class="profile__avatar" src="/public/avatar-plug.png" width="130" height="130" alt="">
+            <img class="profile__avatar" src="/avatar-plug.png" width="130" height="130" alt="">
             <p class="profile__avatar-change">Поменять аватар</p>
             <p class="profile__name">Иван</p>
         </div>
@@ -963,7 +963,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
     <div class="profile__field">
 
         <div class="profile__main-data">
-            <img class="profile__avatar" src="/public/avatar-plug.png" width="130" height="130" alt="">
+            <img class="profile__avatar" src="/avatar-plug.png" width="130" height="130" alt="">
             <p class="profile__avatar-change">Поменять аватар</p>
         </div>
 
@@ -1006,7 +1006,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
     <div class="profile__field">
 
         <div class="profile__main-data">
-            <img class="profile__avatar" src="/public/avatar-plug.png" width="130" height="130" alt="">
+            <img class="profile__avatar" src="/avatar-plug.png" width="130" height="130" alt="">
             <p class="profile__avatar-change">Поменять аватар</p>
         </div>
 
@@ -1041,7 +1041,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
     <div class="profile__field">
 
         <div class="profile__main-data">
-            <img class="profile__avatar" src="/public/avatar-plug.png" width="130" height="130" alt="">
+            <img class="profile__avatar" src="/avatar-plug.png" width="130" height="130" alt="">
             <p class="profile__avatar-change">Поменять аватар</p>
             <p class="profile__name">Иван</p>
         </div>
