@@ -11,7 +11,7 @@
 ```
 {{>ChatItem
     appointment="chat__active"
-    imgLink="/src/assets/img/_mockData/user1.jpg"
+    imgLink="/public/user1.jpg"
     nameUser="Андрей"
     sender="Вы:"
     messageUser="lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem"

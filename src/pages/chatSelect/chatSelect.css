@@ -22,7 +22,7 @@
     width: 100%;
     border: none;
     background-color: var(--background-dark-color);
-    background-image: url("/src/assets/img/search-icon.png");
+    background-image: url("/public/search-icon.png");
     background-repeat: no-repeat;
     background-position: 35% center;
 }
@@ -59,7 +59,7 @@
     border: none;
     color: var(--text-secondary-color);
     background-color: var(--transparent-color);
-    background-image: url("/src/assets/img/arrow-button.png");
+    background-image: url("/public/arrow-button.png");
     background-repeat: no-repeat;
     background-position: 100% 55%;
 }

@@ -34,11 +34,11 @@
 }
 
 .button__add-user {
-    background-image: url("/src/assets/img/add-user-btn.png");
+    background-image: url("/public/add-user-btn.png");
 }
 
 .button__remove-user {
-    background-image: url("/src/assets/img/remove-user-btn.png");
+    background-image: url("/public/remove-user-btn.png");
 }
 
 .chat__attach-menu {
@@ -52,13 +52,13 @@
 }
 
 .button__attach-photo {
-    background-image: url("/src/assets/img/attach-photo-video.png");
+    background-image: url("/public/attach-photo-video.png");
 }
 
 .button__attach-file {
-    background-image: url("/src/assets/img/attach-file.png");
+    background-image: url("/public/attach-file.png");
 }
 
 .button__attach-location {
-    background-image: url("/src/assets/img/attach-location.png");
+    background-image: url("/public/attach-location.png");
 }
