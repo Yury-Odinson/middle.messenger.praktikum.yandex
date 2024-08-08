@@ -3,7 +3,6 @@ import * as Components from './components';
 import * as Pages from './pages';
 import './style.css'
 
-
 const pages = {
     "nav": [Pages.NavigatePage],
     "chat": [Pages.ChatPage],
@@ -33,7 +32,7 @@ function navigate(page: string) {
     container.innerHTML = templatingFunction(context);
 }
 
-document.addEventListener("DOMContentLoaded", () => navigate("error500"));
+document.addEventListener("DOMContentLoaded", () => navigate("nav"));
 
 document.addEventListener('click', e => {
     //@ts-ignore
