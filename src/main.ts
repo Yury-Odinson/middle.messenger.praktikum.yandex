@@ -26,10 +26,10 @@ Object.entries(Components).forEach(([name, component]) => {
 });
 
 function navigate(page: string) {
-    const [source, context] = pages[page];
-    const container = document.getElementById("app");
-    const templatingFunction = Handlebars.compile(source);
-    container.innerHTML = templatingFunction(context);
+    //@ts-ignore
+    const [ source, context ] = pages[page];
+    const container = document.getElementById('app')!;
+    container.innerHTML = Handlebars.compile(source)(context);
 }
 
 document.addEventListener("DOMContentLoaded", () => navigate("nav"));
