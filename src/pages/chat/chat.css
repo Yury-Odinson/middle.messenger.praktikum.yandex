@@ -24,7 +24,7 @@
     margin: 0.4rem 1rem;
     width: 40px;
     height: 40px;
-    background-image: url("/src/assets/img/chat-settings-btn.png");
+    background-image: url("/public/chat-settings-btn.png");
     background-repeat: no-repeat;
     background-position: center;
     background-color: var(--transparent-color);
@@ -92,11 +92,11 @@
 }
 
 .button__attachment {
-    background-image: url("/src/assets/img/attach-btn-icon.png");
+    background-image: url("/public/attach-btn-icon.png");
 }
 
 .button__send-message {
-    background-image: url("/src/assets/img/send-msg-icon.png");
+    background-image: url("/public/send-msg-icon.png");
 }
 
 .button__send-message:hover {
