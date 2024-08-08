@@ -33,7 +33,7 @@ function navigate(page: string) {
     container.innerHTML = templatingFunction(context);
 }
 
-document.addEventListener("DOMContentLoaded", () => navigate("dialogLoad"));
+document.addEventListener("DOMContentLoaded", () => navigate("error500"));
 
 document.addEventListener('click', e => {
     //@ts-ignore
