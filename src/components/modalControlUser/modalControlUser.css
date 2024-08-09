@@ -36,3 +36,12 @@
     left: 3%;
     font-size: 0.7rem;
 }
+
+.custom-load-file {
+    margin: 0 auto;
+    line-height: 1.2rem;
+    max-width: 140px;
+    color: var(--main-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
