@@ -3,7 +3,7 @@
 
         <div class="chat__nav-header">
             {{>Button appointment="nav-profile" label="Профиль"}}
-            {{>Input appointment="input__nav-search" type="text" label="Поиск"}}
+            {{>Input name="nav-search" appointment="input__nav-search" type="text" label="Поиск"}}
         </div>
         {{>ChatsList}}
     </div>
@@ -12,7 +12,7 @@
 
         <div class="chat__header">
             <div class="chat__user-info">
-                <img class="chat__item-avatar" src="/user4.jpg" width="50" height="50" alt="">
+                <img class="chat__item-avatar" src="/user4.jpg" width="50" height="50" alt="user avatar">
                 <p class="chat__item-name">Мистер Кот</p>
             </div>
             <div class="chat__settings">
@@ -57,7 +57,7 @@
             <div class="chat__message message-user">
                 <div class="message-content"></div>
                 <div class="message-attachments">
-                    <img src="/message-image.png" alt="">
+                    <img src="/message-image.png" alt="message image">
                 </div>
                 <div class="message-info">
                     <p class="message-date">14:37</p>
@@ -122,7 +122,7 @@
 
         <div class="chat__footer">
             {{>Button appointment="attachment" label=""}}
-            {{>Input appointment="input__message" type="text" label="Сообщение"}}
+            {{>Input name="input-message" appointment="input__message" type="text" label="Сообщение"}}
             {{>Button appointment="send-message" label=""}}
         </div>
     </div>
