@@ -252,7 +252,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
     <p class="modal__load-photo-title">{{labelTitle}}</p>
     <p class="modal__error">{{labelError}}</p>
 
-    <label class="label__load-photo" for="input__photo">
+    <label class="avatar" for="input__photo">
         <span>Выбрать файл на компьютере</span>
     </label>
 
@@ -417,7 +417,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
 
         <div class="chat__footer">
             {{>Button appointment="attachment" label=""}}
-            {{>Input name="input-message" appointment="input__message" type="text" label="Сообщение"}}
+            {{>Input name="message" appointment="input__message" type="text" label="Сообщение"}}
             {{>Button appointment="send-message" label=""}}
         </div>
     </div>
@@ -563,7 +563,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
 
         <div class="chat__footer">
             {{>Button appointment="attachment" label=""}}
-            {{>Input name="input-message" appointment="input__message" type="text" label="Сообщение"}}
+            {{>Input name="message" appointment="input__message" type="text" label="Сообщение"}}
             {{>Button appointment="send-message" label=""}}
         </div>
     </div>
@@ -697,7 +697,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
 
         <div class="chat__footer">
             {{>Button appointment="attachment" label=""}}
-            {{>Input name="input-message" appointment="input__message" type="text" label="Сообщение"}}
+            {{>Input name="message" appointment="input__message" type="text" label="Сообщение"}}
             {{>Button appointment="send-message" label=""}}
 
             <div class="chat__attach-menu">
@@ -859,7 +859,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
 
         <div class="chat__footer">
             {{>Button appointment="attachment" label=""}}
-            {{>Input name="input-message" appointment="input__message" type="text" label="Сообщение"}}
+            {{>Input name="message" appointment="input__message" type="text" label="Сообщение"}}
             {{>Button appointment="send-message" label=""}}
         </div>
     </div>
@@ -991,27 +991,27 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
 
         <div class="profile__data">
             <p>Почта</p>
-            {{>Input name="profile-email" appointment="input__profile-data" type="text" label="pochta@yandex.ru"}}
+            {{>Input name="email" appointment="input__profile-data" type="text" label="pochta@yandex.ru"}}
         </div>
         <div class="profile__data">
             <p>Логин</p>
-            {{>Input name="profile-login" appointment="input__profile-data" type="text" label="ivanivanov"}}
+            {{>Input name="login" appointment="input__profile-data" type="text" label="ivanivanov"}}
         </div>
         <div class="profile__data">
             <p>Имя</p>
-            {{>Input name="profile-first-name" appointment="input__profile-data" type="text" label="Иван"}}
+            {{>Input name="first_name" appointment="input__profile-data" type="text" label="Иван"}}
         </div>
         <div class="profile__data">
             <p>Фамилия</p>
-            {{>Input name="profile-last-name" appointment="input__profile-data" type="text" label="Иванов"}}
+            {{>Input name="last_name" appointment="input__profile-data" type="text" label="Иванов"}}
         </div>
         <div class="profile__data">
             <p>Имя в чате</p>
-            {{>Input name="profile-chat-name" appointment="input__profile-data" type="text" label="Иван"}}
+            {{>Input name="display_name" appointment="input__profile-data" type="text" label="Иван"}}
         </div>
         <div class="profile__data">
             <p>Телефон</p>
-            {{>Input name="profile-phone" appointment="input__profile-data" type="text" label="+7 (123) 456 78 90"}}
+            {{>Input name="phone" appointment="input__profile-data" type="text" label="+7 (123) 456 78 90"}}
         </div>
 
         <div class="profile__control">
@@ -1105,13 +1105,13 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
 `,Kr=`<form class="form">
     <div class="form-data">
         <p class="form-data__title">Регистрация</p>
-        {{> Input name="signin-email" label="Почта" type="text" appointment="input__form"}}
-        {{> Input name="signin-login" label="Логин" type="text" appointment="input__form"}}
-        {{> Input name="signin-name" label="Имя" type="text" appointment="input__form"}}
-        {{> Input name="signin-last-name" label="Фамилия" type="text" appointment="input__form"}}
-        {{> Input name="signin-phone" label="Телефон" type="text" appointment="input__form"}}
-        {{> Input name="signin-password" label="Пароль" type="password" appointment="input__form input__form-errPwd"}}
-        {{> Input name="signin-confirm-password" label="Пароль (ещё раз)" type="password" appointment="input__form input__form-errPwd" error="Пароли не совпадают!" }}
+        {{> Input name="email" label="Почта" type="text" appointment="input__form"}}
+        {{> Input name="login" label="Логин" type="text" appointment="input__form"}}
+        {{> Input name="first_name" label="Имя" type="text" appointment="input__form"}}
+        {{> Input name="last_name" label="Фамилия" type="text" appointment="input__form"}}
+        {{> Input name="phone" label="Телефон" type="text" appointment="input__form"}}
+        {{> Input name="password" label="Пароль" type="password" appointment="input__form input__form-errPwd"}}
+        {{> Input name="password" label="Пароль (ещё раз)" type="password" appointment="input__form input__form-errPwd" error="Пароли не совпадают!" }}
     </div>
 
     <div class="form-control">
