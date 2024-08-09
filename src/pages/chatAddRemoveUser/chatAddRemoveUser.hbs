@@ -20,7 +20,7 @@
 
         <div class="chat__nav-header">
             {{>Button appointment="nav-profile" label="Профиль"}}
-            {{>Input appointment="input__nav-search" type="text" label="Поиск"}}
+            {{>Input name="nav-search" appointment="input__nav-search" type="text" label="Поиск"}}
         </div>
         {{>ChatsList}}
     </div>
@@ -139,7 +139,7 @@
 
         <div class="chat__footer">
             {{>Button appointment="attachment" label=""}}
-            {{>Input appointment="input__message" type="text" label="Сообщение"}}
+            {{>Input name="input-message" appointment="input__message" type="text" label="Сообщение"}}
             {{>Button appointment="send-message" label=""}}
         </div>
     </div>
