@@ -922,8 +922,8 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
 `,Vn=`<form class="form">\r
     <div class="form-data">\r
         <p class="form-data__title">Вход</p>\r
-        {{> Input name="login-login" label="Логин" type="text" appointment="input__form" error="Неверный логин"}}\r
-        {{> Input name="login-password" label="Пароль" type="password" appointment="input__form"}}\r
+        {{> Input name="login" label="Логин" type="text" appointment="input__form" error="Неверный логин"}}\r
+        {{> Input name="password" label="Пароль" type="password" appointment="input__form"}}\r
         {{> Button label="Забыли пароль?" type="forgot-password" }}\r
     </div>\r
 \r
@@ -1003,7 +1003,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
         </div>\r
         <div class="profile__data">\r
             <p>Фамилия</p>\r
-            {{>Input name="last_name" appointment="input__profile-data" type="text" label="Иванов"}}\r
+            {{>Input name="second_name" appointment="input__profile-data" type="text" label="Иванов"}}\r
         </div>\r
         <div class="profile__data">\r
             <p>Имя в чате</p>\r
@@ -1108,7 +1108,7 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
         {{> Input name="email" label="Почта" type="text" appointment="input__form"}}\r
         {{> Input name="login" label="Логин" type="text" appointment="input__form"}}\r
         {{> Input name="first_name" label="Имя" type="text" appointment="input__form"}}\r
-        {{> Input name="last_name" label="Фамилия" type="text" appointment="input__form"}}\r
+        {{> Input name="second_name" label="Фамилия" type="text" appointment="input__form"}}\r
         {{> Input name="phone" label="Телефон" type="text" appointment="input__form"}}\r
         {{> Input name="password" label="Пароль" type="password" appointment="input__form input__form-errPwd"}}\r
         {{> Input name="password" label="Пароль (ещё раз)" type="password" appointment="input__form input__form-errPwd" error="Пароли не совпадают!" }}\r
