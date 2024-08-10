@@ -1034,15 +1034,15 @@ Expecting `+E.join(", ")+", got '"+(this.terminals_[b]||b)+"'":U="Parse error on
 \r
         <div class="profile__data">\r
             <p>Старый пароль</p>\r
-            {{>Input name="profile-old-password" appointment="input__profile-data" type="password" label="******"}}\r
+            {{>Input name="oldPassword" appointment="input__profile-data" type="password" label="******"}}\r
         </div>\r
         <div class="profile__data">\r
             <p>Новый пароль</p>\r
-            {{>Input name="profile-new-password" appointment="input__profile-data" type="password" label="********"}}\r
+            {{>Input name="newPassword" appointment="input__profile-data" type="password" label="********"}}\r
         </div>\r
         <div class="profile__data">\r
             <p>Повторите новый пароль</p>\r
-            {{>Input name="profile-confirm-password" appointment="input__profile-data" type="password" label="********"}}\r
+            {{>Input name="newPassword" appointment="input__profile-data" type="password" label="********"}}\r
         </div>\r
 \r
         <div class="profile__control">\r
