@@ -1,0 +1,48 @@
+.chat__message {
+    position: relative;
+    margin: 1rem 0;
+    width: fit-content;
+    max-width: 400px;
+    background-color: var(--background-dark-color);
+    text-align: left;
+    word-break: break-all;
+}
+
+.message-content {
+    padding: 1rem;
+    min-width: 160px;
+}
+
+.message-content:empty {
+    padding: 0;
+}
+
+.message-attachments {
+    display: flex;
+    width: fit-content;
+}
+
+.message-date {
+    text-align: right;
+    font-size: 0.8rem;
+    color: var(--text-secondary-color);
+}
+
+.message-user {
+    border-radius: 0 12px 12px 12px;
+}
+
+.message-you {
+    margin-left: auto;
+    border-radius: 12px 12px 0 12px;
+    background-color: var(--secondary-color);
+}
+
+.message-info {
+    position: absolute;
+    bottom: 0.2rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}

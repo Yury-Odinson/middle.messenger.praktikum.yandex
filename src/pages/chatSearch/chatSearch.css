@@ -1,0 +1,7 @@
+.button__profile-back {
+    width: 60px;
+    border-radius: 0;
+    background-image: url("/public/back-profile-btn.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}

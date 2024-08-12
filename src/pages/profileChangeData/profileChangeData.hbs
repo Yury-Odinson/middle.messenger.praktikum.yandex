@@ -1,0 +1,43 @@
+<div class="wrapper">
+
+    {{>Button appointment="profile-back"}}
+
+    <div class="profile__field">
+
+        <div class="profile__main-data">
+            <img class="profile__avatar" src="/avatar-plug.png" width="130" height="130" alt="profile avatar">
+            <p class="profile__avatar-change">Поменять аватар</p>
+        </div>
+
+        <div class="profile__data">
+            <p>Почта</p>
+            {{>Input name="email" appointment="input__profile-data" type="text" label="pochta@yandex.ru"}}
+        </div>
+        <div class="profile__data">
+            <p>Логин</p>
+            {{>Input name="login" appointment="input__profile-data" type="text" label="ivanivanov"}}
+        </div>
+        <div class="profile__data">
+            <p>Имя</p>
+            {{>Input name="first_name" appointment="input__profile-data" type="text" label="Иван"}}
+        </div>
+        <div class="profile__data">
+            <p>Фамилия</p>
+            {{>Input name="second_name" appointment="input__profile-data" type="text" label="Иванов"}}
+        </div>
+        <div class="profile__data">
+            <p>Имя в чате</p>
+            {{>Input name="display_name" appointment="input__profile-data" type="text" label="Иван"}}
+        </div>
+        <div class="profile__data">
+            <p>Телефон</p>
+            {{>Input name="phone" appointment="input__profile-data" type="text" label="+7 (123) 456 78 90"}}
+        </div>
+
+        <div class="profile__control">
+            {{>Button appointment="primary-profile" label="Сохранить"}}
+        </div>
+
+    </div>
+
+</div>

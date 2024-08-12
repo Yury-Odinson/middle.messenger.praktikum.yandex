@@ -1,0 +1,44 @@
+button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+button:hover {
+    border-color: var(--main-color);
+}
+
+button:focus,
+button:focus-visible {
+    outline: 4px auto var(--main-color);
+}
+
+.button__primary {
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+.button__secondary {
+    background-color: #FFFFFF00;
+    color: var(--main-color);
+}
+
+.button__forgot-password {
+    margin-top: 0.4rem;
+    padding: 0;
+    width: 7rem;
+    font-size: 0.7em;
+    font-weight: 100;
+    border: none;
+    background-color: var(--transparent-color);
+}
+
+.button__forgot-password:hover {
+    border: none;
+}
