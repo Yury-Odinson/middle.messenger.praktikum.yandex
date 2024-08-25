@@ -1,5 +1,3 @@
-// file with EventBus
-
 type Events = {
     [key: string]: Array<Function>
 };

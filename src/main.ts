@@ -32,7 +32,7 @@ function navigate(page: string) {
     container.innerHTML = Handlebars.compile(source)(context);
 }
 
-document.addEventListener("DOMContentLoaded", () => navigate("nav"));
+document.addEventListener("DOMContentLoaded", () => navigate("signIn"));
 
 document.addEventListener('click', e => {
     //@ts-ignore
