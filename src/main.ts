@@ -18,17 +18,17 @@ const pages = {
     "profileChangeData": [Pages.ProfileChangeDataPage],
     "profileChangePassword": [Pages.ProfileChangePasswordPage],
     "profileLoadAvatar": [Pages.ProfileLoadAvatarPage],
-    "signIn": [Pages.SignInPage]
+    "signIn": [Pages.SignIn]
 };
 
-Object.entries(Components).forEach(([name, component]) => {
+Object.entries(Components).forEach(([name, component]): void => {
     Handlebars.registerPartial(name, component);
 });
 
-function navigate(page: string) {
+function navigate(page: string): void {
     //@ts-ignore
-    const [ source, context ] = pages[page];
-    const container = document.getElementById('app')!;
+    const [source, context] = pages[page];
+    const container: HTMLElement = document.getElementById('app')!;
     container.innerHTML = Handlebars.compile(source)(context);
 }
 

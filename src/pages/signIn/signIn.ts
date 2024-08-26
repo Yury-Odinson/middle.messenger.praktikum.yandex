@@ -1,17 +1,23 @@
-// form signIn
-
 import Block from "../../core/Block.ts";
 import {Button} from "../../components";
 
 export default class SignIn extends Block {
-    init() {
-        const ButtonLogin = new Button({label: "Зарегистрироваться", type: "primary"});
 
-        this.setProps(ButtonLogin);
+    constructor(props: object) {
+        super("form", {...props,});
     };
 
+    init() {
+        const ButtonLogin = new Button({label: "Зарегистрироваться", type: "primary"});
+        this.setProps({ButtonLogin});
+    };
+
+    // render() {
+    //     return ` <div>{{{ ButtonLogin }}}</div>`
+    // };
+
     render() {
-        return (`
+        return `
             <form class="form">
                 <div class="form-data">
                     <p class="form-data__title">Регистрация</p>
@@ -29,6 +35,6 @@ export default class SignIn extends Block {
 <!--                    {{> Button appointment="secondary" label="Войти" }}-->
                     {{ButtonLogin}}
                 </div>
-            </form>`)
+            </form>`
     }
 };

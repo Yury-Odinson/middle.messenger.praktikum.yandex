@@ -86,16 +86,61 @@ export default class Block {
         return this.#element;
     };
 
+    // #render(): void {
+    //     const block = this.render();
+    //     // Этот небезопасный метод для упрощения логики
+    //     // Используйте шаблонизатор из npm или напишите свой безопасный
+    //     // Нужно не в строку компилировать (или делать это правильно),
+    //     // либо сразу в DOM-элементы возвращать из compile DOM-ноду
+    //     this.#element.innerHTML = block;
+    //
+    // };
+
+
     #render(): void {
-        const block = this.render();
-        // Этот небезопасный метод для упрощения логики
-        // Используйте шаблонизатор из npm или напишите свой безопасный
-        // Нужно не в строку компилировать (или делать это правильно),
-        // либо сразу в DOM-элементы возвращать из compile DOM-ноду
-        this.#element.innerHTML = block;
+        // const propsAndStubs = { ...this.props };
+
+        // Object.entries(this.children).forEach(([key, child]) => {
+            // propsAndStubs[key] = `<div data-id="${child._id}"></div>`
+        // });
+
+        const fragment = this.#createDocumentElement('template');
+
+        // if(this.name === 'LoginPage') {
+        //     console.log(this.render())
+        //     console.log(propsAndStubs)
+        // }
+
+        fragment.innerHTML = Handlebars.compile(this.render())(this.#element);
+        // if(this.name === 'LoginPage') {
+        //     console.log(fragment.innerHTML)
+        //
+        // }
+
+        // const newElement = fragment.content.firstElementChild;
+        //
+        // Object.values(this.children).forEach(child => {
+        //     const stub = fragment.content.querySelector(`[data-id="${child._id}"]`);
+        //
+        //     stub?.replaceWith(child.getContent());
+        // });
+        //
+        // if (this.#element) {
+        //     this.#element.replaceWith(newElement);
+        // }
+        //
+        // this.#element = newElement;
+        //
+        // this.#addEvents();
+        //
+        // if(this.name === 'LoginPage') {
+        //     console.log(newElement.innerHTML)
+        //
+        // }
     };
 
     render(): void {
+        console.log(this.#element);
     };
 
     getContent() {
