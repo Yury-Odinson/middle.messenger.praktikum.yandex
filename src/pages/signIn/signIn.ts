@@ -9,7 +9,9 @@ export default class SignIn extends Block {
 
     init() {
         const ButtonLogin = new Button({label: "Зарегистрироваться", type: "primary"});
-        this.setProps({ButtonLogin});
+
+        const ButtonSignIn = new Button({label: "Войти", type: "primary"});
+        this.children = { ButtonLogin, ButtonSignIn};
     };
 
     // render() {
@@ -31,8 +33,7 @@ export default class SignIn extends Block {
                 </div>
 
                 <div class="form-control">
-<!--                    {{> Button appointment="primary" label="Зарегистрироваться" }}-->
-<!--                    {{> Button appointment="secondary" label="Войти" }}-->
+                    {{ButtonSignIn}}
                     {{ButtonLogin}}
                 </div>
             </form>`

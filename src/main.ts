@@ -23,25 +23,31 @@ const pages = {
 };
 
 Object.entries(Components).forEach(([name, component]): void => {
+
+    if (name === "Button") {
+        return;
+    }
     Handlebars.registerPartial(name, component);
 });
 
 function navigate(page: string): void {
     //@ts-ignore
-    const [source, context] = pages[page];
+    const [Source, context] = pages[page];
+    const component = new Source();
     const container: HTMLElement = document.getElementById('app')!;
-    container.innerHTML = Handlebars.compile(source)(context);
+    // container.innerHTML = Handlebars.compile(component)(context);
+    container.append(component.getContent());
 }
 
-// document.addEventListener("DOMContentLoaded", () => navigate("error500"));
+document.addEventListener("DOMContentLoaded", () => navigate("signIn"));
 
-document.addEventListener("DOMContentLoaded", () => {
-    navigate("error500");
-    const testVal = document.getElementById("intest");
-
-    testVal.addEventListener("input", valPassword);
-
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//     navigate("error500");
+//     const testVal = document.getElementById("intest");
+//
+//     testVal.addEventListener("input", valPassword);
+//
+// });
 
 document.addEventListener('click', e => {
     //@ts-ignore

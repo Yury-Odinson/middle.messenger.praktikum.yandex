@@ -11,8 +11,11 @@ export default class EventBus {
 
     on(event, callback): void {
         if (!this.listeners[event]) {
-            this.listeners[event].push(callback);
+            this.listeners[event] = [];
         }
+
+
+        this.listeners[event].push(callback);
     }
 
     off(event, callback): void {

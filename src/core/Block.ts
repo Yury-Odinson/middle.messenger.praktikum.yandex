@@ -1,4 +1,5 @@
 import EventBus from "./EventBus.ts";
+import Handlebars from "handlebars";
 
 type Events = {
     INIT: string,
@@ -18,14 +19,18 @@ export default class Block {
     #element: HTMLElement | null = null;
     #meta: object | null = null; // meta - {tag name & props (className etc...)}
 
-    constructor(tagName: string = "div", props: object | null = {}) {
+    constructor(tagName: string = "div", propsAndChildren: object | null = {}) {
         const eventBus = new EventBus();
         this.#meta = {
             tagName,
-            props
+            propsAndChildren
         };
 
-        this.props = this.#makePropsProxy(props);
+        // this.props = this.#makePropsProxy(props);
+        const {props, children} = this.#getChildrenAndProps(propsAndChildren);
+
+        this.props = props;
+        this.children = children;
 
         this.eventBus = () => eventBus;
 
@@ -33,8 +38,23 @@ export default class Block {
         eventBus.emit(Block.EVENTS.INIT);
     };
 
+    #getChildrenAndProps(propsAndChildren) {
+        const children = {};
+        const props = {};
+
+        Object.entries(propsAndChildren).forEach(([key, value]) => {
+            if (value instanceof Block) {
+                children[key] = value;
+            } else {
+                props[key] = value;
+            }
+        });
+
+        return { children, props };
+    }
+
     #registerEvents(eventBus): void {
-        eventBus.on(Block.EVENTS.INIT, this.init.bind(this));
+        eventBus.on(Block.EVENTS.INIT, this.#init.bind(this));
         eventBus.on(Block.EVENTS.FLOW_CDM, this.#componentDidMount.bind(this));
         eventBus.on(Block.EVENTS.FLOW_CDU, this.#componentDidUpdate.bind(this));
         eventBus.on(Block.EVENTS.FLOW_RENDER, this.#render.bind(this));
@@ -45,10 +65,13 @@ export default class Block {
         this.#element = this.#createDocumentElement(tagName);
     };
 
-    init(): void {
+    #init() {
         this.#createResources();
-
+        this.init();
         this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
+    }
+
+    init(): void {
     };
 
     #componentDidMount(): void {
@@ -98,11 +121,11 @@ export default class Block {
 
 
     #render(): void {
-        // const propsAndStubs = { ...this.props };
+        const propsAndStubs = { ...this.props };
 
-        // Object.entries(this.children).forEach(([key, child]) => {
-            // propsAndStubs[key] = `<div data-id="${child._id}"></div>`
-        // });
+        Object.entries(this.children).forEach(([key, child]) => {
+            propsAndStubs[key] = `<div data-id="${child._id}"></div>`
+        });
 
         const fragment = this.#createDocumentElement('template');
 
@@ -111,25 +134,28 @@ export default class Block {
         //     console.log(propsAndStubs)
         // }
 
-        fragment.innerHTML = Handlebars.compile(this.render())(this.#element);
+        console.log(this.render());
+        console.log(propsAndStubs)
+
+        fragment.innerHTML = Handlebars.compile(this.render())(propsAndStubs);
         // if(this.name === 'LoginPage') {
         //     console.log(fragment.innerHTML)
         //
         // }
 
-        // const newElement = fragment.content.firstElementChild;
+        const newElement = fragment.content.firstElementChild;
         //
-        // Object.values(this.children).forEach(child => {
-        //     const stub = fragment.content.querySelector(`[data-id="${child._id}"]`);
+        Object.values(this.children).forEach(child => {
+            const stub = fragment.content.querySelector(`[data-id="${child._id}"]`);
+
+            stub?.replaceWith(child.getContent());
+        });
         //
-        //     stub?.replaceWith(child.getContent());
-        // });
-        //
-        // if (this.#element) {
-        //     this.#element.replaceWith(newElement);
-        // }
-        //
-        // this.#element = newElement;
+        if (this.#element) {
+            this.#element.replaceWith(newElement);
+        }
+
+        this.#element = newElement;
         //
         // this.#addEvents();
         //
