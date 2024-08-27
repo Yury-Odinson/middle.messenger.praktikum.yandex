@@ -2,6 +2,7 @@ import Handlebars from 'handlebars';
 import * as Components from './components';
 import * as Pages from './pages';
 import './style.css'
+import {valEmail, valLogin, valMessage, valName, valPassword} from "./utils/validations.ts";
 
 const pages = {
     "nav": [Pages.NavigatePage],
@@ -32,7 +33,15 @@ function navigate(page: string): void {
     container.innerHTML = Handlebars.compile(source)(context);
 }
 
-document.addEventListener("DOMContentLoaded", () => navigate("signIn"));
+// document.addEventListener("DOMContentLoaded", () => navigate("error500"));
+
+document.addEventListener("DOMContentLoaded", () => {
+    navigate("error500");
+    const testVal = document.getElementById("intest");
+
+    testVal.addEventListener("input", valPassword);
+
+});
 
 document.addEventListener('click', e => {
     //@ts-ignore
