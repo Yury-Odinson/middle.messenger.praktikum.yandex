@@ -1,5 +1,5 @@
 import Block from "../../core/Block.ts";
-import {Button} from "../../components";
+import {Button, Input} from "../../components";
 
 export default class SignIn extends Block {
 
@@ -8,8 +8,40 @@ export default class SignIn extends Block {
     };
 
     init() {
+        const InputEmail = new Input({
+            name: "email", label: "Почта", type:"text", appointment:"input__form"
+        });
+        const InputLogin = new Input({
+            name: "login", label: "Логин", type:"text", appointment:"input__form"
+        });
+        const InputFirstName = new Input({
+            name: "first_name", label: "Имя", type:"text", appointment:"input__form"
+        });
+        const InputSecondName = new Input({
+            name: "second_name", label: "Фамилия", type:"text", appointment:"input__form"
+        });
+        const InputPhone = new Input({
+            name: "phone", label: "Телефон", type:"text", appointment:"input__form"
+        });
+        const InputPassword = new Input({
+            name: "password", label: "Пароль", type:"password", appointment:"input__form input__form-errPwd"
+        });
+        const InputConfirmPassword = new Input({
+            name: "password", label: "Пароль (ещё раз)", type:"password", appointment:"input__form input__form-errPwd",
+            error: "Пароли не совпадают!"
+        });
+
         const ButtonSignIn = new Button({label: "Зарегистрироваться", type: "primary"});
-        this.children = {ButtonSignIn};
+        this.children = {
+            InputEmail,
+            InputLogin,
+            InputFirstName,
+            InputSecondName,
+            InputPhone,
+            InputPassword,
+            InputConfirmPassword,
+            ButtonSignIn
+        };
     };
 
     render() {
@@ -17,15 +49,13 @@ export default class SignIn extends Block {
             <form class="form">
                 <div class="form-data">
                     <p class="form-data__title">Регистрация</p>
-                    
-<!--                    {{> Input name="email" label="Почта" type="text" appointment="input__form"}}-->
-<!--                    {{> Input name="login" label="Логин" type="text" appointment="input__form"}}-->
-<!--                    {{> Input name="first_name" label="Имя" type="text" appointment="input__form"}}-->
-<!--                    {{> Input name="second_name" label="Фамилия" type="text" appointment="input__form"}}-->
-<!--                    {{> Input name="phone" label="Телефон" type="text" appointment="input__form"}}-->
-<!--                    {{> Input name="password" label="Пароль" type="password" appointment="input__form input__form-errPwd"}}-->
-<!--                    {{> Input name="password" label="Пароль (ещё раз)" type="password" appointment="input__form input__form-errPwd" error="Пароли не совпадают!" }}-->
-                
+                    {{{InputEmail}}}
+                    {{{InputLogin}}}
+                    {{{InputFirstName}}}
+                    {{{InputSecondName}}}
+                    {{{InputPhone}}}
+                    {{{InputPassword}}}
+                    {{{InputConfirmPassword}}}
                 </div>
 
                 <div class="form-control">
