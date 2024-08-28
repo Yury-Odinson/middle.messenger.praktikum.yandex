@@ -24,9 +24,10 @@ const pages = {
 
 Object.entries(Components).forEach(([name, component]): void => {
 
-    if (name === "Button") {
-        return;
-    }
+    // if (name === "Button") {
+    //     return;
+    // }
+    // console.log(component);
     Handlebars.registerPartial(name, component);
 });
 

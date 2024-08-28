@@ -1,5 +1,6 @@
 import EventBus from "./EventBus.ts";
 import Handlebars from "handlebars";
+import {nanoid} from "nanoid";
 
 type Events = {
     INIT: string,
@@ -18,6 +19,7 @@ export default class Block {
 
     #element: HTMLElement | null = null;
     #meta: object | null = null; // meta - {tag name & props (className etc...)}
+    #id = nanoid(10);
 
     constructor(tagName: string = "div", propsAndChildren: object | null = {}) {
         const eventBus = new EventBus();
@@ -26,7 +28,6 @@ export default class Block {
             propsAndChildren
         };
 
-        // this.props = this.#makePropsProxy(props);
         const {props, children} = this.#getChildrenAndProps(propsAndChildren);
 
         this.props = props;
@@ -109,64 +110,40 @@ export default class Block {
         return this.#element;
     };
 
-    // #render(): void {
-    //     const block = this.render();
-    //     // Этот небезопасный метод для упрощения логики
-    //     // Используйте шаблонизатор из npm или напишите свой безопасный
-    //     // Нужно не в строку компилировать (или делать это правильно),
-    //     // либо сразу в DOM-элементы возвращать из compile DOM-ноду
-    //     this.#element.innerHTML = block;
-    //
-    // };
-
-
     #render(): void {
         const propsAndStubs = { ...this.props };
 
         Object.entries(this.children).forEach(([key, child]) => {
-            propsAndStubs[key] = `<div data-id="${child._id}"></div>`
+            propsAndStubs[key] = `<div data-id="${child.#id}"></div>`
         });
 
         const fragment = this.#createDocumentElement('template');
 
-        // if(this.name === 'LoginPage') {
-        //     console.log(this.render())
-        //     console.log(propsAndStubs)
-        // }
-
-        console.log(this.render());
-        console.log(propsAndStubs)
+        // console.log(this.render());
+        // console.log(propsAndStubs);
 
         fragment.innerHTML = Handlebars.compile(this.render())(propsAndStubs);
-        // if(this.name === 'LoginPage') {
-        //     console.log(fragment.innerHTML)
-        //
-        // }
+
+        console.log("propsAndStubs:");
+        console.log(propsAndStubs);
 
         const newElement = fragment.content.firstElementChild;
-        //
+
         Object.values(this.children).forEach(child => {
-            const stub = fragment.content.querySelector(`[data-id="${child._id}"]`);
+            const stub = fragment.content.querySelector(`[data-id="${child.#id}"]`);
 
             stub?.replaceWith(child.getContent());
         });
-        //
+
         if (this.#element) {
             this.#element.replaceWith(newElement);
         }
 
         this.#element = newElement;
-        //
-        // this.#addEvents();
-        //
-        // if(this.name === 'LoginPage') {
-        //     console.log(newElement.innerHTML)
-        //
-        // }
     };
 
     render(): void {
-        console.log(this.#element);
+        // console.log(this.#element);
     };
 
     getContent() {
