@@ -9,13 +9,10 @@ export default class LoginPage extends Block {
 
     init() {
         const InputLogin = new Input({
-           name:"login", label:"Логин", type:"text", className:"input__form"
+           name:"login", label:"Логин", type:"text", className:"input__form", id:"inpLogin"
         });
         const InputPassword = new Input({
-            name:"password", label:"Пароль", type:"password", className:"input__form"
-        });
-        const ButtonForgotPassword = new Button({
-           label:"Забыли пароль?", className:"forgot-password"
+            name:"password", label:"Пароль", type:"password", className:"input__form", id:"inpPass"
         });
         const ButtonAuth = new Button({
             label:"Авторизоваться", className:"primary"
@@ -27,7 +24,6 @@ export default class LoginPage extends Block {
         this.children = {
             InputLogin,
             InputPassword,
-            ButtonForgotPassword,
             ButtonAuth,
             ButtonNoAccount
         };
@@ -40,7 +36,6 @@ export default class LoginPage extends Block {
                     <p class="form-data__title">Вход</p>
                     {{{InputLogin}}}
                     {{{InputPassword}}}
-                    {{{ButtonForgotPassword}}}
                 </div>
 
                 <div class="form-control">

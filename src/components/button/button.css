@@ -28,17 +28,3 @@ button:focus-visible {
     background-color: #FFFFFF00;
     color: var(--main-color);
 }
-
-.button__forgot-password {
-    margin-top: 0.4rem;
-    padding: 0;
-    width: 7rem;
-    font-size: 0.7em;
-    font-weight: 100;
-    border: none;
-    background-color: var(--transparent-color);
-}
-
-.button__forgot-password:hover {
-    border: none;
-}
