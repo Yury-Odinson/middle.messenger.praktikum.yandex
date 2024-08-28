@@ -2,12 +2,10 @@ import Block from "../../core/Block.ts";
 import {Button, Input} from "../../components";
 
 export default class LoginPage extends Block {
-    constructor(props: object) {
-        super("form", {...props});
-
-    };
 
     init() {
+        const onLoginBind = this.onLogin.bind(this);
+
         const InputLogin = new Input({
            name:"login", label:"Логин", type:"text", className:"input__form", id:"inpLogin"
         });
@@ -15,10 +13,10 @@ export default class LoginPage extends Block {
             name:"password", label:"Пароль", type:"password", className:"input__form", id:"inpPass"
         });
         const ButtonAuth = new Button({
-            label:"Авторизоваться", className:"primary"
+            label:"Авторизоваться", className:"primary", type: "button", onClick: onLoginBind
         });
         const ButtonNoAccount = new Button({
-            label:"Нет аккаунта?", className:"secondary"
+            label:"Нет аккаунта?", className:"secondary", type: "button"
         });
 
         this.children = {
@@ -27,6 +25,10 @@ export default class LoginPage extends Block {
             ButtonAuth,
             ButtonNoAccount
         };
+    };
+
+    onLogin() {
+        console.log('Login:', this.children.InputLogin);
     };
 
     render() {
