@@ -1,7 +1,7 @@
 import Block from "../../core/Block.ts";
 import {Button, Input} from "../../components";
 
-export default class SignIn extends Block {
+export default class SignInPage extends Block {
 
     constructor(props: object) {
         super("form", {...props,});
@@ -9,29 +9,29 @@ export default class SignIn extends Block {
 
     init() {
         const InputEmail = new Input({
-            name: "email", label: "Почта", type:"text", appointment:"input__form"
+            name: "email", label: "Почта", type:"text", className:"input__form"
         });
         const InputLogin = new Input({
-            name: "login", label: "Логин", type:"text", appointment:"input__form"
+            name: "login", label: "Логин", type:"text", className:"input__form"
         });
         const InputFirstName = new Input({
-            name: "first_name", label: "Имя", type:"text", appointment:"input__form"
+            name: "first_name", label: "Имя", type:"text", className:"input__form"
         });
         const InputSecondName = new Input({
-            name: "second_name", label: "Фамилия", type:"text", appointment:"input__form"
+            name: "second_name", label: "Фамилия", type:"text", className:"input__form"
         });
         const InputPhone = new Input({
-            name: "phone", label: "Телефон", type:"text", appointment:"input__form"
+            name: "phone", label: "Телефон", type:"text", className:"input__form"
         });
         const InputPassword = new Input({
-            name: "password", label: "Пароль", type:"password", appointment:"input__form input__form-errPwd"
+            name: "password", label: "Пароль", type:"password", className:"input__form input__form-errPwd"
         });
         const InputConfirmPassword = new Input({
-            name: "password", label: "Пароль (ещё раз)", type:"password", appointment:"input__form input__form-errPwd",
+            name: "password", label: "Пароль (ещё раз)", type:"password", className:"input__form input__form-errPwd",
             error: "Пароли не совпадают!"
         });
+        const ButtonSignIn = new Button({label: "Зарегистрироваться", className: "primary"});
 
-        const ButtonSignIn = new Button({label: "Зарегистрироваться", type: "primary"});
         this.children = {
             InputEmail,
             InputLogin,
@@ -62,5 +62,5 @@ export default class SignIn extends Block {
                     {{{ButtonSignIn}}}
                 </div>
             </form>`
-    }
+    };
 };

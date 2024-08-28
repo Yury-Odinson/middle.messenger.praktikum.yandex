@@ -12,4 +12,4 @@ export {ProfilePage} from "./profile";
 export {ProfileChangeDataPage} from "./profileChangeData";
 export {ProfileChangePasswordPage} from "./profileChangePassword";
 export {ProfileLoadAvatarPage} from "./profileLoadAvatar";
-export {SignIn} from "./signIn";
+export {SignInPage} from "./signIn";

@@ -11,7 +11,7 @@ export default class Input extends Block {
                     <input
                         name="{{name}}"
                         id="{{id}}"
-                        class="input__element {{appointment}}"
+                        class="input__element {{className}}"
                         placeholder=""
                         type="{{type}}"
                         value="{{defaultValue}}"

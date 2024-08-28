@@ -7,7 +7,7 @@ export default class Button extends Block {
 
     render(): string {
         return `
-            <button class="button button__{{type}}" >
+            <button class="button button__{{className}}" >
                 {{label}}
             </button>
         `

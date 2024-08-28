@@ -124,8 +124,8 @@ export default class Block {
 
         fragment.innerHTML = Handlebars.compile(this.render())(propsAndStubs);
 
-        console.log("propsAndStubs:");
-        console.log(propsAndStubs);
+        // console.log("propsAndStubs:");
+        // console.log(propsAndStubs);
 
         const newElement = fragment.content.firstElementChild;
 
@@ -140,6 +140,8 @@ export default class Block {
         }
 
         this.#element = newElement;
+
+        // console.log(this.#element);
     };
 
     render(): void {

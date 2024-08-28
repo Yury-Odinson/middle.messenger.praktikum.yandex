@@ -2,7 +2,6 @@ import Handlebars from 'handlebars';
 import * as Components from './components';
 import * as Pages from './pages';
 import './style.css'
-import {valEmail, valLogin, valMessage, valName, valPassword} from "./utils/validations.ts";
 
 const pages = {
     "nav": [Pages.NavigatePage],
@@ -19,15 +18,10 @@ const pages = {
     "profileChangeData": [Pages.ProfileChangeDataPage],
     "profileChangePassword": [Pages.ProfileChangePasswordPage],
     "profileLoadAvatar": [Pages.ProfileLoadAvatarPage],
-    "signIn": [Pages.SignIn]
+    "signIn": [Pages.SignInPage]
 };
 
 Object.entries(Components).forEach(([name, component]): void => {
-
-    // if (name === "Button") {
-    //     return;
-    // }
-    // console.log(component);
     Handlebars.registerPartial(name, component);
 });
 
@@ -40,7 +34,7 @@ function navigate(page: string): void {
     container.append(component.getContent());
 }
 
-document.addEventListener("DOMContentLoaded", () => navigate("signIn"));
+document.addEventListener("DOMContentLoaded", () => navigate("chat"));
 
 // document.addEventListener("DOMContentLoaded", () => {
 //     navigate("error500");
