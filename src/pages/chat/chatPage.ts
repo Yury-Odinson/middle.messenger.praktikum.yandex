@@ -4,7 +4,7 @@ import MessageItem from "../../components/message/message.ts";
 
 export default class ChatPage extends Block{
     constructor(props: object) {
-        super("div",{...props});
+        super({...props});
     };
 
     init() {

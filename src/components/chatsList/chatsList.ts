@@ -3,7 +3,7 @@ import {ChatItem} from "../chatItem";
 
 export default class ChatsList extends Block {
     constructor(props) {
-        super("div", {...props});
+        super({...props});
 
     };
 
