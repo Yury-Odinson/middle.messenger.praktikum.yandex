@@ -1,5 +1,5 @@
 import Block from "../../core/Block.ts";
-import {Button, Input} from "../../components";
+import {Button, ChatItem, Input} from "../../components";
 
 export default class ChatPage extends Block{
     constructor(props: object) {
@@ -33,10 +33,10 @@ export default class ChatPage extends Block{
             <div class="wrapper">
                 <div class="chat__nav">
                     <div class="chat__nav-header">
-                    {{{ButtonProfile}}}
-                    {{{InputNavSearch}}}
+                        {{{ButtonProfile}}}
+                        {{{InputNavSearch}}}
                     </div>
-
+                    
                 </div>
 
                 <div class="chat__field">
