@@ -1,5 +1,5 @@
 import Block from "../../core/Block.ts";
-import {Button, ChatItem, Input} from "../../components";
+import {Button, ChatsList, Input} from "../../components";
 
 export default class ChatPage extends Block{
     constructor(props: object) {
@@ -7,6 +7,7 @@ export default class ChatPage extends Block{
     };
 
     init() {
+        const Chats = new ChatsList({});
         const ButtonProfile = new Button({className: "nav-profile", label: "Профиль"});
         const InputNavSearch = new Input({
             name: "nav-search", className: "input__nav-search", type: "text", label:"Поиск"
@@ -19,6 +20,7 @@ export default class ChatPage extends Block{
         const ButtonSendMessage = new Button({className: "send-message", label: ""});
 
         this.children = {
+            Chats,
             ButtonProfile,
             InputNavSearch,
             ButtonChatSetting,
@@ -36,7 +38,7 @@ export default class ChatPage extends Block{
                         {{{ButtonProfile}}}
                         {{{InputNavSearch}}}
                     </div>
-                    
+                    {{{Chats}}}
                 </div>
 
                 <div class="chat__field">
