@@ -1,5 +1,6 @@
 import Block from "../../core/Block.ts";
 import {Button, ChatsList, Input} from "../../components";
+import MessageItem from "../../components/message/message.ts";
 
 export default class ChatPage extends Block{
     constructor(props: object) {
@@ -19,6 +20,32 @@ export default class ChatPage extends Block{
         });
         const ButtonSendMessage = new Button({className: "send-message", label: ""});
 
+
+        const Message1 = new MessageItem({
+            className:"message-user",
+            content:"Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент\n                            попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что\n                            астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на\n                            поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.\n                       \n                            Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда\n                            и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000\n                            евро.",
+            attachments:"",
+            date:"13:49"
+        });
+        const Message2 = new MessageItem({
+            className:"message-user message-user-with-attach",
+            content:"Зацени",
+            attachments:"/message-image.png",
+            date:"13:49"
+        });
+        const Message3 = new MessageItem({
+            className:"message-you",
+            content:"Lorem",
+            attachments:"",
+            date:"13:49"
+        });
+        const Message4 = new MessageItem({
+            className:"message-you message-user-with-attach",
+            content:"тут всплыл интересный кусок лунной космической истории",
+            attachments:"/message-image.png",
+            date:"13:59"
+        });
+
         this.children = {
             Chats,
             ButtonProfile,
@@ -26,7 +53,11 @@ export default class ChatPage extends Block{
             ButtonChatSetting,
             ButtonAttachment,
             InputMessage,
-            ButtonSendMessage
+            ButtonSendMessage,
+            Message1,
+            Message2,
+            Message3,
+            Message4
         };
     };
 
@@ -56,34 +87,12 @@ export default class ChatPage extends Block{
                 <div class="chat__main">
 
                     <p class="chat__date-message">2 августа 2016 г.</p>
-
-                    <div class="chat__message message-user">
-                        <div class="message-content">
-                            Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент
-                            попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что
-                            астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на
-                            поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.
-                            <br>
-                            Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда
-                            и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000
-                            евро.
-                        </div>
-                    <div class="message-attachments"></div>
-                    <div class="message-info">
-                        <p class="message-date">13:49</p>
-                    </div>
-                </div>
-
-                <div class="chat__message message-user">
-                    <div class="message-content"></div>
-                    <div class="message-attachments">
-                        <img src="/message-image.png" alt="message image">
-                    </div>
-                    <div class="message-info">
-                        <p class="message-date">14:37</p>
-                    </div>
-                </div>
-
+                    
+                    {{{Message1}}}
+                    {{{Message2}}}
+                    {{{Message3}}}
+                    {{{Message4}}}
+                    
                 </div>
 
                 <div class="chat__footer">

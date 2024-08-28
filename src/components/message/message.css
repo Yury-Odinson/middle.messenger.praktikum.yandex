@@ -19,7 +19,11 @@
 
 .message-attachments {
     display: flex;
-    width: fit-content;
+    width: 100%;
+}
+
+.message-attachment__item {
+    width: 100%;
 }
 
 .message-date {
@@ -30,6 +34,19 @@
 
 .message-user {
     border-radius: 0 12px 12px 12px;
+}
+
+.message-user > .message-info > .message-status {
+    display: none;
+}
+
+.message-user > .message-attachments,
+.message-you > .message-attachments {
+    display: none;
+}
+
+.message-user-with-attach > .message-attachments {
+    display: block;
 }
 
 .message-you {
