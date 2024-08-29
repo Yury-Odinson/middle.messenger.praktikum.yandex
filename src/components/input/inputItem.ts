@@ -10,6 +10,7 @@ export default class InputItem extends Block {
                 type: props.type,
                 name: props.name,
                 id: props.id,
+                maxLength: props.maxLength,
                 events: {
                     blur: props.onBlur || (() => {
                     }),

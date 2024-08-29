@@ -1,5 +1,6 @@
 import Block from "../../core/Block.ts";
 import {Button, Input} from "../../components";
+import {valLogin} from "../../utils/validations.ts";
 
 export default class LoginPage extends Block {
     #data = {
@@ -20,6 +21,7 @@ export default class LoginPage extends Block {
             type: "text",
             className: "input__form",
             id: "inpLogin",
+            maxLength: "20",
             change: setLoginData
         });
         const InputPassword = new Input({
@@ -28,6 +30,7 @@ export default class LoginPage extends Block {
             type: "password",
             className: "input__form",
             id: "inpPass",
+            maxLength: "20",
             change: setPasswordData
         });
         const ButtonAuth = new Button({
