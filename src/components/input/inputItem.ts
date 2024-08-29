@@ -6,17 +6,22 @@ export default class InputItem extends Block {
         super({
             ...props,
             Input: new Input({
-                className: "input__form",
+                className: props.className,
+                type: props.type,
+                name: props.name,
+                id: props.id,
                 events: {
-                    blur: props.onBlur || (() => {}),
-                    onchange: props.onchange || (() => {})
+                    blur: props.onBlur || (() => {
+                    }),
+                    change: props.change || (() => {
+                    })
                 }
             })
         });
     };
 
     componentDidUpdate(oldProps: any, newProps: any): boolean {
-        if(oldProps === newProps) {
+        if (oldProps === newProps) {
             return false;
         }
 
@@ -28,10 +33,10 @@ export default class InputItem extends Block {
         return `
             <label class="input">
                 {{{ Input }}}
-                
                 <p class="input__label">{{label}}</p>
                 <p class="input__label-error">{{error}}</p>
             </label>
     `
     };
+
 };

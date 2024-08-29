@@ -7,9 +7,12 @@ export default class LoginPage extends Block {
         password: ""
     };
 
-    init() {
-        const onChangeLoginBind = this.onChangeLogin.bind(this);
+    init(): void {
+        // const onChangeLoginBind = this.onChangeLogin.bind(this);
         const onLoginBind = this.onLogin.bind(this);
+
+        const setLoginData = (e) => this.#data.login = e.target.value;
+        const setPasswordData = (e) => this.#data.password = e.target.value;
 
         const InputLogin = new Input({
             name: "login",
@@ -17,10 +20,15 @@ export default class LoginPage extends Block {
             type: "text",
             className: "input__form",
             id: "inpLogin",
-            onchange: onChangeLoginBind
+            change: setLoginData
         });
         const InputPassword = new Input({
-            name: "password", label: "Пароль", type: "password", className: "input__form", id: "inpPass"
+            name: "password",
+            label: "Пароль",
+            type: "password",
+            className: "input__form",
+            id: "inpPass",
+            change: setPasswordData
         });
         const ButtonAuth = new Button({
             label: "Авторизоваться", className: "primary", type: "button", onClick: onLoginBind
@@ -30,17 +38,15 @@ export default class LoginPage extends Block {
         });
 
         this.children = {
-            // ...this.children,
             InputLogin,
             InputPassword,
             ButtonAuth,
             ButtonNoAccount
         };
 
-        // this.name = "LoginPage";
     };
 
-    onChangeLogin(e) {
+    onChangeLogin(e): void {
         const inputValue = e.target.value;
         if (inputValue === 'error') {
             this.children.InputLogin.setProps({error: true, errorText: 'some error'});
@@ -53,11 +59,11 @@ export default class LoginPage extends Block {
         this.setProps({login: this.props.login});
     }
 
-    onLogin() {
+    onLogin(): void {
         console.log(this.#data);
     };
 
-    render() {
+    render(): string {
         return `
             <form class="form">
                 <div class="form-data">
