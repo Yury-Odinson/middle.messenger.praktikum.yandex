@@ -72,7 +72,7 @@ export default class Block {
     }
 
     #componentDidUpdate(oldProps, newProps) {
-        console.log('CDU')
+        // console.log('CDU')
         const response = this.componentDidUpdate(oldProps, newProps);
         if (!response) {
             return;
@@ -121,14 +121,14 @@ export default class Block {
         const fragment = this.#createDocumentElement('template');
 
         if(this.name === 'LoginPage') {
-            console.log(this.render())
-            console.log(propsAndStubs)
+            // console.log(this.render())
+            // console.log(propsAndStubs)
 
         }
 
         fragment.innerHTML = Handlebars.compile(this.render())(propsAndStubs);
         if(this.name === 'LoginPage') {
-            console.log(fragment.innerHTML)
+            // console.log(fragment.innerHTML)
 
         }
 
@@ -149,7 +149,7 @@ export default class Block {
         this.#addEvents();
 
         if(this.name === 'LoginPage') {
-            console.log(newElement.innerHTML)
+            // console.log(newElement.innerHTML)
 
         }
     }
