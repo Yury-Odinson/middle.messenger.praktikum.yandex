@@ -10,11 +10,14 @@ export default class InputItem extends Block {
                 type: props.type,
                 name: props.name,
                 id: props.id,
+                value: props.value,
                 maxLength: props.maxLength,
                 events: {
                     blur: props.onBlur || (() => {
                     }),
                     change: props.change || (() => {
+                    }),
+                    input: props.change || (() => {
                     })
                 }
             })
@@ -37,7 +40,7 @@ export default class InputItem extends Block {
                 <p class="input__label">{{label}}</p>
                 <p class="input__label-error">{{error}}</p>
             </label>
-    `
+        `
     };
 
 };

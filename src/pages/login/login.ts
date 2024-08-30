@@ -9,11 +9,28 @@ export default class LoginPage extends Block {
     };
 
     init(): void {
-        // const onChangeLoginBind = this.onChangeLogin.bind(this);
+        const checkLoginLengthBind = checkLoginLength.bind(this);
+        const checkPasswordLengthBind = checkPasswordLength.bind(this);
         const onLoginBind = this.onLogin.bind(this);
 
-        const setLoginData = (e) => this.#data.login = e.target.value;
+        const setLoginData = (e) => this.#data.login = valLogin(e);
         const setPasswordData = (e) => this.#data.password = e.target.value;
+
+        function checkLoginLength(): void {
+            if (this.#data.login.length < 3) {
+                InputLogin.props.error = "Некорректный логин";
+            } else {
+                InputLogin.props.error = "";
+            }
+        }
+
+        function checkPasswordLength(): void {
+            if (this.#data.password.length < 8) {
+                InputPassword.props.error = "Слишком короткий пароль";
+            } else {
+                InputPassword.props.error = "";
+            }
+        }
 
         const InputLogin = new Input({
             name: "login",
@@ -22,7 +39,9 @@ export default class LoginPage extends Block {
             className: "input__form",
             id: "inpLogin",
             maxLength: "20",
-            change: setLoginData
+            error: "",
+            change: setLoginData,
+            onBlur: checkLoginLengthBind
         });
         const InputPassword = new Input({
             name: "password",
@@ -31,7 +50,8 @@ export default class LoginPage extends Block {
             className: "input__form",
             id: "inpPass",
             maxLength: "20",
-            change: setPasswordData
+            change: setPasswordData,
+            onBlur: checkPasswordLengthBind
         });
         const ButtonAuth = new Button({
             label: "Авторизоваться", className: "primary", type: "button", onClick: onLoginBind
@@ -49,19 +69,7 @@ export default class LoginPage extends Block {
 
     };
 
-    onChangeLogin(e): void {
-        const inputValue = e.target.value;
-        if (inputValue === 'error') {
-            this.children.InputLogin.setProps({error: true, errorText: 'some error'});
-            return;
-        } else {
-            this.children.InputLogin.setProps({error: false, errorText: null});
-
-        }
-        console.log(inputValue);
-        this.setProps({login: this.props.login});
-    }
-
+    // Функция на дальнейшую отправку данных в API
     onLogin(): void {
         console.log(this.#data);
     };

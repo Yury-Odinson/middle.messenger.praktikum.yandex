@@ -19,18 +19,14 @@ export function valName() {
     return this.value;
 }
 
-export function valLogin() {
-    if (this.value.length === 0) return;
-
+export function valLogin(e) {
     const regex = /^[A-Za-z0-9\-]*$/;
 
-    if (!regex.test(this.value)) {
-        this.value = this.value.replace(/[^A-Za-z0-9\-]+/g, "");
+    if (!regex.test(e.target.value)) {
+        e.target.value = e.target.value.replace(/[^A-Za-z0-9\-]+/g, "");
     }
 
-    if (this.value.length < 3) return console.log("Недостаточно символов");
-
-    return this.value;
+    return e.target.value;
 }
 
 export function valEmail() {

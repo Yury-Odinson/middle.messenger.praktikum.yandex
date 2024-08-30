@@ -10,13 +10,9 @@ export default class Input extends Block {
                 class="input__element {{className}}"
                 placeholder=""
                 type="{{type}}"
-                value="{{defaultValue}}"
                 maxlength="{{maxLength}}"
                 required
             />
         `
     };
-
-
-
-}
+};
