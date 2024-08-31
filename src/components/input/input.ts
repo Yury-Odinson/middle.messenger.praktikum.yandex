@@ -11,6 +11,7 @@ export default class Input extends Block {
                 placeholder=""
                 type="{{type}}"
                 maxlength="{{maxLength}}"
+                minlength="{{minLength}}"
                 required
             />
         `

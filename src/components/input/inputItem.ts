@@ -12,6 +12,7 @@ export default class InputItem extends Block {
                 id: props.id,
                 value: props.value,
                 maxLength: props.maxLength,
+                minLength: props.minLength,
                 events: {
                     blur: props.onBlur || (() => {
                     }),

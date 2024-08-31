@@ -17,7 +17,7 @@ export default class LoginPage extends Block {
         const setPasswordData = (e) => this.#data.password = e.target.value;
 
         function checkLoginLength(): void {
-            if (this.#data.login.length < 3) {
+            if (this.#data.login.length < 3 && this.#data.login.length > 0) {
                 InputLogin.props.error = "Некорректный логин";
             } else {
                 InputLogin.props.error = "";
@@ -25,7 +25,7 @@ export default class LoginPage extends Block {
         }
 
         function checkPasswordLength(): void {
-            if (this.#data.password.length < 8) {
+            if (this.#data.password.length < 8 && this.#data.password.length > 0) {
                 InputPassword.props.error = "Слишком короткий пароль";
             } else {
                 InputPassword.props.error = "";
@@ -39,6 +39,7 @@ export default class LoginPage extends Block {
             className: "input__form",
             id: "inpLogin",
             maxLength: "20",
+            minLength: "3",
             error: "",
             change: setLoginData,
             onBlur: checkLoginLengthBind
@@ -50,10 +51,14 @@ export default class LoginPage extends Block {
             className: "input__form",
             id: "inpPass",
             maxLength: "20",
+            minLength: "8",
             change: setPasswordData,
             onBlur: checkPasswordLengthBind
         });
         const ButtonAuth = new Button({
+            // ЗАМЕТКА ДЛЯ РЕВЬЮЕРА: на текущий момент стоит тип button для того,
+            // чтобы при клике не происходила перезагрузка страницы и можно было согласно ТЗ,
+            // увидеть в console.log() данные, которые будут перенаправлены в API.
             label: "Авторизоваться", className: "primary", type: "button", onClick: onLoginBind
         });
         const ButtonNoAccount = new Button({
