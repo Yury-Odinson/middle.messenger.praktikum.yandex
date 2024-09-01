@@ -62,3 +62,7 @@
 .button__attach-location {
     background-image: url("/public/attach-location.png");
 }
+
+.hidden {
+    display: none;
+}

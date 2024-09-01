@@ -5,7 +5,7 @@
     right: 0;
     bottom: 0;
     background-color: #1A1A1A63;
-    z-index: 998;
+    z-index: 992;
     cursor: pointer;
 }
 
@@ -19,12 +19,19 @@
     flex-direction: column;
     gap: 3rem;
     background-color: #fff;
-    z-index: 999;
+    z-index: 9929;
     border-radius: 12px;
+    cursor: default;
+    /*pointer-events: none;*/
+}
+
+.modal__control-user > p {
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .modal__control-user > button {
-    margin-top: -2rem;
+    margin-top: -1rem;
 }
 
 .input__control-user + .input__label {
