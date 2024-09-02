@@ -24,35 +24,51 @@ export function valPassword() {
     }
 }
 
-
 export function valEmail() {
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-
+    if (!regex.test(this.data.email) && this.data.email !== "") {
+        this.children.InputEmail.props.error = "Некорректный Email";
+    } else {
+        this.children.InputEmail.props.error = "";
+    }
 }
 
-export function valMessage() {
-    if (this.value.length !== "") return this.value;
+export function valName(e) {
+    const name = e.target;
+    name.value = name.value.replace(/[^A-Za-zА-Яа-яёЁ\-]+/g, "");
 
-    return "Введите сообщение";
-}
-
-export function valName() {
-    if (this.value.length === 0) return;
-
-    this.value = this.value[0].toUpperCase() + this.value.slice(1);
-    const regex = /^[A-Za-zА-Яа-яёЁ\-]*$/;
-
-    if (!regex.test(this.value)) {
-        this.value = this.value.replace(/[^A-Za-zА-Яа-яёЁ\-]+/g, "");
+    if (name.value.length > 0) {
+        name.value = name.value[0].toUpperCase() + name.value.slice(1);
     }
 
-    if (this.value.length < 3) return console.log("Недостаточно символов");
+    return name.value;
+}
 
-    return this.value;
+export function valFirstName() {
+    if (this.data.first_name.length < 2 && this.data.first_name.length > 0) {
+        this.children.InputFirstName.props.error = "Введите имя";
+    } else {
+        this.children.InputFirstName.props.error = "";
+    }
+}
+
+export function valSecondName() {
+    if (this.data.second_name.length < 2 && this.data.second_name.length > 0) {
+        this.children.InputSecondName.props.error = "Введите фамилию";
+    } else {
+        this.children.InputSecondName.props.error = "";
+    }
 }
 
 
 export function valPhone() {
     if (this.value.length === 0) return;
+}
+
+
+export function valMessage() {
+    if (this.value.length !== "") return this.value;
+
+    return "Введите сообщение";
 }

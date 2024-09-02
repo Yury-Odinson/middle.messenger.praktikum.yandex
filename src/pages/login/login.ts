@@ -13,8 +13,8 @@ export default class LoginPage extends Block {
 
         const navSignInPage = () => navigate("signIn");
 
-        const checkLoginLengthBind = valLengthLogin.bind(this);
-        const checkPasswordBind = valPassword.bind(this);
+        const checkLoginLength = valLengthLogin.bind(this);
+        const checkPassword = valPassword.bind(this);
 
         const onLoginBind = this.onLogin.bind(this);
 
@@ -25,14 +25,14 @@ export default class LoginPage extends Block {
             name: "login", label: "Логин", type: "text", className: "input__form", id: "inpLogin",
             maxLength: "20", minLength: "3", error: "",
             change: setLoginData,
-            onBlur: checkLoginLengthBind
+            onBlur: checkLoginLength
         });
 
         const InputPassword = new Input({
             name: "password", label: "Пароль", type: "password", className: "input__form", id: "inpPass",
             maxLength: "20", minLength: "8",
             change: setPasswordData,
-            onBlur: checkPasswordBind
+            onBlur: checkPassword
         });
 
         const ButtonAuth = new Button({
