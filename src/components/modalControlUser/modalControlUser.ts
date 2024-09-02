@@ -33,6 +33,19 @@ export default class ModalControlUser extends Block {
         };
     };
 
+    componentDidUpdate(oldProps, newProps): boolean {
+        console.log(this.props.isAddUser)
+        for (const key in oldProps) {
+            if (oldProps[key] !== newProps[key]) {
+                this.setProps({[key]: newProps[key]});
+                this.children.buttonControl?.setProps({
+                    label: this.props.isAddUser ? "Добавить" : "Удалить"
+                });
+            }
+        }
+        return true;
+    };
+
     render() {
         return `
             {{#if isOpen}}

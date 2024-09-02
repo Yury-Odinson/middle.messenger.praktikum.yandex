@@ -110,9 +110,9 @@ export default class ChatPage extends Block {
     };
 
     componentDidUpdate(oldProps, newProps): boolean {
-        for (const oldPropsKey in oldProps) {
-            if (oldProps[oldPropsKey] !== newProps[oldPropsKey]) {
-                this.setProps({[oldPropsKey]: newProps[oldPropsKey]})
+        for (const key in oldProps) {
+            if (oldProps[key] !== newProps[key]) {
+                this.setProps({[key]: newProps[key]});
                 this.children.ModalUser?.setProps({
                     isAddUser: this.props.isAddUserModal
                 });
