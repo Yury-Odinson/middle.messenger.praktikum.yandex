@@ -8,14 +8,26 @@ export default class ChatPage extends Block {
         super({
             ...props,
             isShowSettings: false,
-            isShowModalAddUser: false,
-            // isShowModalRemoveUser: false
+            isShowModal: false,
+            isAddUserModal: true
         });
     };
 
     init() {
         const showControlUser = () => this.setProps({isShowSettings: !this.props.isShowSettings});
-        const showModalUser = () => this.setProps({isShowModalAddUser: !this.props.isShowModalAddUser});
+        const openModalAddUser = () => {
+            return this.setProps({
+                isShowModal: !this.props.isShowModal,
+                isAddUserModal: true
+            });
+        };
+
+        const openModalRemoveUser = () => {
+            return this.setProps({
+                isShowModal: !this.props.isShowModal,
+                isAddUserModal: false
+            });
+        };
 
         const Chats = new ChatsList({});
         const ButtonProfile = new Button({className: "nav-profile", label: "Профиль"});
@@ -36,24 +48,18 @@ export default class ChatPage extends Block {
         const ButtonAddUser = new Button({
             className: "add-user",
             label: "Добавить пользователя",
-            onClick: showModalUser
+            onClick: openModalAddUser
         });
         const ButtonRemoveUser = new Button({
             className: "remove-user",
-            label: "Удалить пользователя"
+            label: "Удалить пользователя",
+            onClick: openModalRemoveUser
         });
 
-        const ModalAddUser = new ModalControlUser({
-            className: this.props.isShowModalAddUser,
-            labelModalTitle: "Добавить пользователя",
-            label: "Добавить",
+        const ModalUser = new ModalControlUser({
+            isOpen: true,
+            isAddUser: this.props.isAddUserModal
         });
-        const ModalRemoveUser = new ModalControlUser({
-            // className: this.props.isShowModalAddUser,
-            labelModalTitle: "Удалить пользователя",
-            label: "Удалить",
-        });
-
 
         const Message1 = new MessageItem({
             className: "message-user",
@@ -99,23 +105,32 @@ export default class ChatPage extends Block {
             Message2,
             Message3,
             Message4,
-            ModalAddUser,
-            ModalRemoveUser
+            ModalUser,
         };
+    };
+
+    componentDidUpdate(oldProps, newProps): boolean {
+        for (const oldPropsKey in oldProps) {
+            if (oldProps[oldPropsKey] !== newProps[oldPropsKey]) {
+                this.setProps({[oldPropsKey]: newProps[oldPropsKey]})
+                this.children.ModalUser?.setProps({
+                    isAddUser: this.props.isAddUserModal
+                });
+            }
+        }
+        return true;
     };
 
     render() {
 
-        const {isShowModalAddUser, isShowModalRemoveUser, isShowSettings} = this.props;
+        const {isShowSettings} = this.props;
 
         return `
-            <div class="wrapper">            
-           
-            <div class="modal__background ${isShowModalAddUser ? "" : "hidden"}" onclick="isShowModalAddUser" ></div>
+            <div class="wrapper">       
             
-            {{#if isShowModalAddUser}}
-                {{{ModalAddUser}}}
-            {{/if}}
+                {{#if isShowModal}}    
+                    {{{ModalUser}}}
+                {{/if}}
             
                 <div class="chat__nav">
                     <div class="chat__nav-header">

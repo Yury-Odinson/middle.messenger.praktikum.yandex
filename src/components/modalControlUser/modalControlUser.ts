@@ -3,8 +3,18 @@ import {Input} from "../input";
 import {Button} from "../button";
 
 export default class ModalControlUser extends Block {
+    constructor(props) {
+        super({
+            ...props,
+            isOpen: props.isOpen,
+            isAddUser: props.isAddUser
+        });
+        // console.log(this.props)
+    };
 
     init() {
+        console.log(this.props)
+
         const inputUser = new Input({
             className: "input__control-user",
             name: "input-control-user",
@@ -14,7 +24,7 @@ export default class ModalControlUser extends Block {
 
         const buttonControl = new Button({
             className: "primary",
-            label: this.props.label
+            label: this.props.isAddUser ? "Добавить" : "Удалить"
         });
 
         this.children = {
@@ -25,13 +35,22 @@ export default class ModalControlUser extends Block {
 
     render() {
         return `
-<!--            <div class="modal__background">-->
+            {{#if isOpen}}
+            <div class="modal__background">
                 <div class="modal__control-user">
-                    <p>{{labelModalTitle}}</p>
+                    <p>
+                        {{#if isAddUser}}
+                            Добавить пользователя
+                        {{else}}
+                            Удалить пользователя
+                        {{/if}}
+                        
+                    </p>
                     {{{inputUser}}}
                     {{{buttonControl}}}
                 </div>
-<!--            </div>-->
+            </div>
+            {{/if}}
         `
     };
 };
