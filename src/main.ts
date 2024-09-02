@@ -33,7 +33,7 @@ export function navigate(page: string): void {
     container.append(component.getContent());
 }
 
-document.addEventListener("DOMContentLoaded", () => navigate("nav"));
+document.addEventListener("DOMContentLoaded", () => navigate("login"));
 
 // document.addEventListener("DOMContentLoaded", () => {
 //     navigate("error500");

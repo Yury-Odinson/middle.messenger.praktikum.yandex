@@ -1,3 +1,36 @@
+export function valChangeLogin(e) {
+    const regex = /^[A-Za-z0-9\-]*$/;
+
+    if (!regex.test(e.target.value)) {
+        e.target.value = e.target.value.replace(/[^A-Za-z0-9\-]+/g, "");
+    }
+
+    return e.target.value;
+}
+
+export function valLengthLogin() {
+    if (this.data.login.length < 3 && this.data.login.length > 0) {
+        this.children.InputLogin.props.error = "Некорректный логин";
+    } else {
+        this.children.InputLogin.props.error = "";
+    }
+}
+
+export function valPassword() {
+    if (this.data.password.length < 8 && this.data.password.length > 0) {
+        this.children.InputPassword.props.error = "Слишком короткий пароль";
+    } else {
+        this.children.InputPassword.props.error = "";
+    }
+}
+
+
+export function valEmail() {
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+
+}
+
 export function valMessage() {
     if (this.value.length !== "") return this.value;
 
@@ -19,37 +52,6 @@ export function valName() {
     return this.value;
 }
 
-export function valLogin(e) {
-    const regex = /^[A-Za-z0-9\-]*$/;
-
-    if (!regex.test(e.target.value)) {
-        e.target.value = e.target.value.replace(/[^A-Za-z0-9\-]+/g, "");
-    }
-
-    return e.target.value;
-}
-
-export function valEmail() {
-    if (this.value.length === 0) return;
-
-    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-    if (!regex.test(this.value)) {
-        console.log("Проверьте Email");
-    }
-    return this.value;
-}
-
-export function valPassword() {
-    if (this.value.length === 0) return;
-
-    const regex = /^(?=.*[A-Z])(?=.*\d).+$/;
-
-    if (!regex.test(this.value)) {
-        console.log("Проверьте пароль");
-    }
-    return this.value;
-}
 
 export function valPhone() {
     if (this.value.length === 0) return;

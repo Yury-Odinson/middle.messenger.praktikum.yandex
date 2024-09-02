@@ -1,10 +1,10 @@
 import Block from "../../core/Block.ts";
 import {Button, Input} from "../../components";
-import {valLogin} from "../../utils/validations.ts";
+import {valChangeLogin, valLengthLogin, valPassword} from "../../utils/validations.ts";
 import {navigate} from "../../main.ts";
 
 export default class LoginPage extends Block {
-    #data = {
+    data = {
         login: "",
         password: ""
     };
@@ -13,52 +13,26 @@ export default class LoginPage extends Block {
 
         const navSignInPage = () => navigate("signIn");
 
-        const checkLoginLengthBind = checkLoginLength.bind(this);
-        const checkPasswordLengthBind = checkPasswordLength.bind(this);
+        const checkLoginLengthBind = valLengthLogin.bind(this);
+        const checkPasswordBind = valPassword.bind(this);
+
         const onLoginBind = this.onLogin.bind(this);
 
-        const setLoginData = (e) => this.#data.login = valLogin(e);
-        const setPasswordData = (e) => this.#data.password = e.target.value;
-
-        function checkLoginLength(): void {
-            if (this.#data.login.length < 3 && this.#data.login.length > 0) {
-                InputLogin.props.error = "Некорректный логин";
-            } else {
-                InputLogin.props.error = "";
-            }
-        }
-
-        function checkPasswordLength(): void {
-            if (this.#data.password.length < 8 && this.#data.password.length > 0) {
-                InputPassword.props.error = "Слишком короткий пароль";
-            } else {
-                InputPassword.props.error = "";
-            }
-        }
+        const setLoginData = (e) => this.data.login = valChangeLogin(e);
+        const setPasswordData = (e) => this.data.password = e.target.value;
 
         const InputLogin = new Input({
-            name: "login",
-            label: "Логин",
-            type: "text",
-            className: "input__form",
-            id: "inpLogin",
-            maxLength: "20",
-            minLength: "3",
-            error: "",
+            name: "login", label: "Логин", type: "text", className: "input__form", id: "inpLogin",
+            maxLength: "20", minLength: "3", error: "",
             change: setLoginData,
             onBlur: checkLoginLengthBind
         });
 
         const InputPassword = new Input({
-            name: "password",
-            label: "Пароль",
-            type: "password",
-            className: "input__form",
-            id: "inpPass",
-            maxLength: "20",
-            minLength: "8",
+            name: "password", label: "Пароль", type: "password", className: "input__form", id: "inpPass",
+            maxLength: "20", minLength: "8",
             change: setPasswordData,
-            onBlur: checkPasswordLengthBind
+            onBlur: checkPasswordBind
         });
 
         const ButtonAuth = new Button({
@@ -71,18 +45,13 @@ export default class LoginPage extends Block {
             label: "Нет аккаунта?", className: "secondary", type: "button", onClick: navSignInPage
         });
 
-        this.children = {
-            InputLogin,
-            InputPassword,
-            ButtonAuth,
-            ButtonNoAccount
-        };
+        this.children = {InputLogin, InputPassword, ButtonAuth, ButtonNoAccount};
 
     };
 
     // Функция на дальнейшую отправку данных в API
     onLogin(): void {
-        console.log(this.#data);
+        console.log(this.data);
     };
 
     render(): string {
