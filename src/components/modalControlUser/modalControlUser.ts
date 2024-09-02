@@ -9,11 +9,9 @@ export default class ModalControlUser extends Block {
             isOpen: props.isOpen,
             isAddUser: props.isAddUser
         });
-        // console.log(this.props)
     };
 
     init() {
-        console.log(this.props)
 
         const inputUser = new Input({
             className: "input__control-user",

@@ -6,8 +6,6 @@ import './style.css'
 const pages = {
     "nav": [Pages.NavigatePage],
     "chat": [Pages.ChatPage],
-    "chatAddRemoveUser": [Pages.ChatAddRemoveUserPage],
-    "chatFunctions": [Pages.ChatFunctionsPage],
     "chatSearch": [Pages.ChatSearchPage],
     "chatSelect": [Pages.ChatSelectPage],
     "dialogLoad": [Pages.DialogLoadPage],
@@ -25,16 +23,17 @@ Object.entries(Components).forEach(([name, component]): void => {
     Handlebars.registerPartial(name, component);
 });
 
-function navigate(page: string): void {
+export function navigate(page: string): void {
     //@ts-ignore
     const [Source, context] = pages[page];
     const component = new Source();
     const container: HTMLElement = document.getElementById('app')!;
-    // container.innerHTML = Handlebars.compile(component)(context);
+    // очистка для перехода между страницами
+    container.innerHTML = "";
     container.append(component.getContent());
 }
 
-document.addEventListener("DOMContentLoaded", () => navigate("chat"));
+document.addEventListener("DOMContentLoaded", () => navigate("nav"));
 
 // document.addEventListener("DOMContentLoaded", () => {
 //     navigate("error500");
