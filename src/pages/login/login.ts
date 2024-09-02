@@ -1,6 +1,7 @@
 import Block from "../../core/Block.ts";
 import {Button, Input} from "../../components";
 import {valLogin} from "../../utils/validations.ts";
+import {navigate} from "../../main.ts";
 
 export default class LoginPage extends Block {
     #data = {
@@ -9,6 +10,9 @@ export default class LoginPage extends Block {
     };
 
     init(): void {
+
+        const navSignInPage = () => navigate("signIn");
+
         const checkLoginLengthBind = checkLoginLength.bind(this);
         const checkPasswordLengthBind = checkPasswordLength.bind(this);
         const onLoginBind = this.onLogin.bind(this);
@@ -44,6 +48,7 @@ export default class LoginPage extends Block {
             change: setLoginData,
             onBlur: checkLoginLengthBind
         });
+
         const InputPassword = new Input({
             name: "password",
             label: "Пароль",
@@ -55,6 +60,7 @@ export default class LoginPage extends Block {
             change: setPasswordData,
             onBlur: checkPasswordLengthBind
         });
+
         const ButtonAuth = new Button({
             // ЗАМЕТКА ДЛЯ РЕВЬЮЕРА: на текущий момент стоит тип button для того,
             // чтобы при клике не происходила перезагрузка страницы и можно было согласно ТЗ,
@@ -62,7 +68,7 @@ export default class LoginPage extends Block {
             label: "Авторизоваться", className: "primary", type: "button", onClick: onLoginBind
         });
         const ButtonNoAccount = new Button({
-            label: "Нет аккаунта?", className: "secondary", type: "button"
+            label: "Нет аккаунта?", className: "secondary", type: "button", onClick: navSignInPage
         });
 
         this.children = {
