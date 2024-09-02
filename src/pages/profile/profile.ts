@@ -6,9 +6,9 @@ export default class profile extends Block {
 
     init() {
 
-        const handlerBackPage = () => navigate("chat");
+        const navChatPage = () => navigate("chat");
 
-        const ButtonBack = new Button({className: "profile-back", onClick: handlerBackPage});
+        const ButtonBack = new Button({className: "profile-back", onClick: navChatPage});
         const ButtonChangeData = new Button({className: "profile-main", label: "Изменить данные"});
         const ButtonChangePassword = new Button({className: "profile-main", label: "Изменить пароль"});
         const ButtonLogOut = new Button({className: "profile-secondary", label: "Выйти"});

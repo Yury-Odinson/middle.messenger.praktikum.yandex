@@ -2,6 +2,7 @@ import Block from "../../core/Block.ts";
 import {Button, ChatsList, Input} from "../../components";
 import MessageItem from "../../components/message/message.ts";
 import ModalControlUser from "../../components/modalControlUser/modalControlUser.ts";
+import {navigate} from "../../main.ts";
 
 export default class ChatPage extends Block {
     constructor(props: object) {
@@ -29,27 +30,38 @@ export default class ChatPage extends Block {
             });
         };
 
+        const navProfilePage = () => navigate("profile");
+        // const navProfilePage = () => console.log("sdf");
+
         const Chats = new ChatsList({});
-        const ButtonProfile = new Button({className: "nav-profile", label: "Профиль"});
+        const ButtonProfile = new Button({
+            className: "nav-profile",
+            label: "Профиль",
+            onClick: navProfilePage
+        });
+
         const InputNavSearch = new Input({
             name: "nav-search", className: "input__nav-search", type: "text", label: "Поиск"
         });
+
         const ButtonChatSetting = new Button({
             className: "chat-settings",
             onClick: showControlUser
         });
+
         const ButtonAttachment = new Button({className: "attachment", label: ""});
         const InputMessage = new Input({
             name: "message", className: "input__message", type: "text", label: "Сообщение"
         });
-        const ButtonSendMessage = new Button({className: "send-message", label: ""});
 
+        const ButtonSendMessage = new Button({className: "send-message", label: ""});
 
         const ButtonAddUser = new Button({
             className: "add-user",
             label: "Добавить пользователя",
             onClick: openModalAddUser
         });
+
         const ButtonRemoveUser = new Button({
             className: "remove-user",
             label: "Удалить пользователя",
@@ -72,18 +84,21 @@ export default class ChatPage extends Block {
             attachments: "",
             date: "13:49"
         });
+
         const Message2 = new MessageItem({
             className: "message-user message-user-with-attach",
             content: "Зацени",
             attachments: "/message-image.png",
             date: "13:49"
         });
+
         const Message3 = new MessageItem({
             className: "message-you",
             content: "Lorem",
             attachments: "",
             date: "13:49"
         });
+
         const Message4 = new MessageItem({
             className: "message-you message-user-with-attach",
             content: "тут всплыл интересный кусок лунной космической истории",
