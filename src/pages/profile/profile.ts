@@ -1,21 +1,16 @@
 import Block from "../../core/Block.ts";
 import {Button} from "../../components";
-import {navigate} from "../../main.ts";
 
 export default class profile extends Block {
 
     init() {
 
-        const navChatPage = () => navigate("chat");
-        const navLoginPage = () => navigate("login");
-
-        const ButtonBack = new Button({className: "profile-back", onClick: navChatPage});
+        const ButtonBack = new Button({className: "profile-back"});
         const ButtonChangeData = new Button({className: "profile-main", label: "Изменить данные"});
         const ButtonChangePassword = new Button({className: "profile-main", label: "Изменить пароль"});
         const ButtonLogOut = new Button({
             className: "profile-secondary",
             label: "Выйти",
-            onClick: navLoginPage
         });
 
         this.children = {ButtonBack, ButtonChangeData, ButtonChangePassword, ButtonLogOut};
@@ -24,7 +19,7 @@ export default class profile extends Block {
     render() {
         return `
             <div class="wrapper">
-
+                <a href="chat" page="chat">tmp link: chat</a>
                 {{{ButtonBack}}}
 
                 <div class="profile__field">
@@ -64,6 +59,7 @@ export default class profile extends Block {
                         {{{ButtonChangeData}}}
                         {{{ButtonChangePassword}}}
                         {{{ButtonLogOut}}}
+                        <a href="login" page="login">tmp link: Выйти</a>
                     </div>
 
                 </div>

@@ -1,7 +1,7 @@
 import Block from "../../core/Block.ts";
 import {Button, Input} from "../../components";
 import {valChangeLogin, valLengthLogin, valPassword} from "../../utils/validations.ts";
-import {navigate} from "../../main.ts";
+// import {navigate} from "../../main.ts";
 
 export default class LoginPage extends Block {
     data = {
@@ -10,8 +10,6 @@ export default class LoginPage extends Block {
     };
 
     init(): void {
-
-        const navSignInPage = () => navigate("signIn");
 
         const checkLoginLength = valLengthLogin.bind(this);
         const checkPassword = valPassword.bind(this);
@@ -42,7 +40,7 @@ export default class LoginPage extends Block {
             label: "Авторизоваться", className: "primary", type: "button", onClick: onLoginBind
         });
         const ButtonNoAccount = new Button({
-            label: "Нет аккаунта?", className: "secondary", type: "button", onClick: navSignInPage
+            label: "Нет аккаунта?", className: "secondary", type: "button",
         });
 
         this.children = {InputLogin, InputPassword, ButtonAuth, ButtonNoAccount};
@@ -66,6 +64,7 @@ export default class LoginPage extends Block {
                 <div class="form-control">
                     {{{ButtonAuth}}}
                     {{{ButtonNoAccount}}}
+                    <a href="signIn" page="signIn">tmp link: signin</a>
                 </div>
             </form>`
     };

@@ -2,7 +2,6 @@ import Block from "../../core/Block.ts";
 import {Button, ChatsList, Input} from "../../components";
 import MessageItem from "../../components/message/message.ts";
 import ModalControlUser from "../../components/modalControlUser/modalControlUser.ts";
-import {navigate} from "../../main.ts";
 
 export default class ChatPage extends Block {
     constructor(props: object) {
@@ -30,14 +29,10 @@ export default class ChatPage extends Block {
             });
         };
 
-        const navProfilePage = () => navigate("profile");
-        // const navProfilePage = () => console.log("sdf");
-
         const Chats = new ChatsList({});
         const ButtonProfile = new Button({
             className: "nav-profile",
-            label: "Профиль",
-            onClick: navProfilePage
+            label: "Профиль"
         });
 
         const InputNavSearch = new Input({
@@ -107,20 +102,8 @@ export default class ChatPage extends Block {
         });
 
         this.children = {
-            Chats,
-            ButtonProfile,
-            InputNavSearch,
-            ButtonChatSetting,
-            ButtonAttachment,
-            InputMessage,
-            ButtonSendMessage,
-            ButtonAddUser,
-            ButtonRemoveUser,
-            Message1,
-            Message2,
-            Message3,
-            Message4,
-            ModalUser,
+            Chats, ButtonProfile, InputNavSearch, ButtonChatSetting, ButtonAttachment, InputMessage,
+            ButtonSendMessage, ButtonAddUser, ButtonRemoveUser, Message1, Message2, Message3, Message4, ModalUser,
         };
     };
 
@@ -149,6 +132,9 @@ export default class ChatPage extends Block {
             
                 <div class="chat__nav">
                     <div class="chat__nav-header">
+                    
+                    <a href="profile" page="profile">tmp link: profile</a>
+                   
                         {{{ButtonProfile}}}
                         {{{InputNavSearch}}}
                     </div>

@@ -23,7 +23,7 @@ Object.entries(Components).forEach(([name, component]): void => {
     Handlebars.registerPartial(name, component);
 });
 
-export function navigate(page: string): void {
+function navigate(page: string): void {
     //@ts-ignore
     const [Source, context] = pages[page];
     const component = new Source();
@@ -33,7 +33,7 @@ export function navigate(page: string): void {
     container.append(component.getContent());
 }
 
-document.addEventListener("DOMContentLoaded", () => navigate("signIn"));
+document.addEventListener("DOMContentLoaded", () => navigate("chat"));
 
 // document.addEventListener("DOMContentLoaded", () => {
 //     navigate("error500");
