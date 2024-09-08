@@ -25,7 +25,7 @@ Object.entries(Components).forEach(([name, component]): void => {
 
 function navigate(page: string): void {
     //@ts-ignore
-    const [Source, context] = pages[page];
+    const [Source] = pages[page];
     const component = new Source();
     const container: HTMLElement = document.getElementById('app')!;
     // очистка для перехода между страницами
@@ -33,7 +33,7 @@ function navigate(page: string): void {
     container.append(component.getContent());
 }
 
-document.addEventListener("DOMContentLoaded", () => navigate("chat"));
+document.addEventListener("DOMContentLoaded", () => navigate("signIn"));
 
 // document.addEventListener("DOMContentLoaded", () => {
 //     navigate("error500");
