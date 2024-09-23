@@ -1,7 +1,5 @@
 export {NavigatePage} from "./navigate";
 export {ChatPage} from "./chat";
-export {ChatAddRemoveUserPage} from "./chatAddRemoveUser";
-export {ChatFunctionsPage} from "./chatFunctions";
 export {ChatSearchPage} from "./chatSearch";
 export {ChatSelectPage} from "./chatSelect";
 export {DialogLoadPage} from "./dialogLoad";

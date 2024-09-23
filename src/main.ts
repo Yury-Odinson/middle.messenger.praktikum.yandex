@@ -6,8 +6,6 @@ import './style.css'
 const pages = {
     "nav": [Pages.NavigatePage],
     "chat": [Pages.ChatPage],
-    "chatAddRemoveUser": [Pages.ChatAddRemoveUserPage],
-    "chatFunctions": [Pages.ChatFunctionsPage],
     "chatSearch": [Pages.ChatSearchPage],
     "chatSelect": [Pages.ChatSelectPage],
     "dialogLoad": [Pages.DialogLoadPage],
@@ -21,18 +19,29 @@ const pages = {
     "signIn": [Pages.SignInPage]
 };
 
-Object.entries(Components).forEach(([name, component]) => {
+Object.entries(Components).forEach(([name, component]): void => {
     Handlebars.registerPartial(name, component);
 });
 
-function navigate(page: string) {
+function navigate(page: string): void {
     //@ts-ignore
-    const [ source, context ] = pages[page];
-    const container = document.getElementById('app')!;
-    container.innerHTML = Handlebars.compile(source)(context);
+    const [Source] = pages[page];
+    const component = new Source();
+    const container: HTMLElement = document.getElementById('app')!;
+    // очистка для перехода между страницами
+    container.innerHTML = "";
+    container.append(component.getContent());
 }
 
-document.addEventListener("DOMContentLoaded", () => navigate("nav"));
+document.addEventListener("DOMContentLoaded", () => navigate("signIn"));
+
+// document.addEventListener("DOMContentLoaded", () => {
+//     navigate("error500");
+//     const testVal = document.getElementById("intest");
+//
+//     testVal.addEventListener("input", valPassword);
+//
+// });
 
 document.addEventListener('click', e => {
     //@ts-ignore

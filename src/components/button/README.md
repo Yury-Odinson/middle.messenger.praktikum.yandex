@@ -1,6 +1,6 @@
 Аргументы компонента Button: 
-* {{appointment}} - передаваемые классы <br>
+* {{className}} - передаваемые классы <br>
 * {{label}} - текст и другое содржимое кнопки <br>
 
 Пример использования: <br>
-```{{> Button appointment="primary" label="Авторизоваться" }}```
+```{{> Button className="primary" label="Авторизоваться" }}```

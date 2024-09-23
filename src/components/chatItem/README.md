@@ -1,5 +1,5 @@
 Аргументы компонента ChatItem: 
-* {{appointment}} - передаваемые классы <br>
+* {{className}} - передаваемые классы <br>
 * {{imgLink}} - изображение пользователя <br>
 * {{nameUser}} - имя пользователя <br>
 * {{sender}} - отправитель сообщения (Вы или пользователь) <br>
@@ -10,7 +10,7 @@
 Пример использования: <br>
 ```
 {{>ChatItem
-    appointment="chat__active"
+    className="chat__active"
     imgLink="/user1.jpg"
     nameUser="Андрей"
     sender="Вы:"

@@ -1,2 +1,2 @@
 import "./modalControlUser.css";
-export { default as ModalControlUser } from './modalControlUser.hbs?raw';
+export { default as ModalControlUser } from './modalControlUser.ts';
